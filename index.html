@@ -1,532 +1,543 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYED SHAYAN ALI SHAH - AI/ML Portfolio</title>
-    <!-- Load Google Fonts: Inter (Body) & Source Code Pro (Code/Headers) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons --><script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        /* Custom styles for smooth scroll and Inter font */
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            /* Light theme background */
-            background-color: #f8fafc; /* Slate 50 (Very Light Gray) */
-            color: #374151; /* Dark Gray Text */
-            font-family: 'Inter', sans-serif;
-            height: 100vh;
-            /* Allow body scroll on mobile, but manage scroll in content-panel for desktop */
-            overflow-y: auto; 
-            
-            /* Add padding-top to body to account for the fixed top navigation bar */
-            padding-top: 5rem; /* Sufficient space for the sticky-nav */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic portfolio of Syed Shayan Ali Shah, an AI/ML researcher working in computer vision, medical image analysis, and vision-language models." />
+  <meta name="theme-color" content="#07101f" />
+  <meta property="og:title" content="Syed Shayan Ali Shah — AI/ML Researcher" />
+  <meta property="og:description" content="Research at the intersection of computer vision, medical image analysis, and trustworthy AI." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Syed Shayan Ali Shah | AI/ML Researcher</title>
 
-        /* Override Tailwind font for a coding look in certain areas */
-        .font-code {
-            font-family: 'Source Code Pro', monospace;
-            font-weight: 500;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Manrope', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            ink: '#07101f',
+            panel: '#0d182b',
+            cyanx: '#46d9ff',
+            indigox: '#7c83ff'
+          },
+          boxShadow: {
+            glow: '0 0 45px rgba(70, 217, 255, .14)'
+          }
         }
-        
-        /* Two-Column Layout Container */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Default: Single column for mobile */
-            height: calc(100vh - 5rem); /* Adjust height to fill remaining viewport, minus nav height */
-        }
-        @media (min-width: 1024px) {
-            .main-grid {
-                /* Left (25%) | Right (75%) */
-                grid-template-columns: 1fr 3fr; 
-                height: calc(100vh - 5rem); /* Same adjustment for desktop */
-            }
-        }
-        
-        /* Left Sidebar (Fixed Profile Panel for Desktop) */
-        .sidebar {
-            background-color: #ffffff; /* White sidebar */
-            overflow-y: auto; /* Allow scrolling if profile is very long */
-            padding: 2.5rem 1.5rem;
-            border-right: 1px solid #e5e7eb; /* Subtle light gray divider */
-        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
-        /* Right Content Panel (Scrollable) */
-        .content-panel {
-            background-color: #f8fafc; /* Very Light Gray background */
-            overflow-y: auto; /* The primary scroll area */
-            padding: 2.5rem 2rem;
-            height: 100%; /* Important: Takes full height of its grid cell */
-        }
-        
-        /* Fixed Navigation Menu (Now top-level and fixed to viewport) */
-        .fixed-nav {
-            position: fixed;
-            top: 0; 
-            left: 0;
-            right: 0;
-            z-index: 50; /* High z-index to be on top */
-            background-color: #ffffff; /* White background for the bar */
-            padding: 1rem 2rem;
-            border-bottom: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Stronger shadow for the top bar */
-        }
-        
-        /* Style for section headings in the content panel */
-        .section-heading {
-            border-bottom: 2px solid #3b82f6; /* Blue accent */
-            padding-bottom: 0.5rem;
-            color: #1f2937; /* Dark text for high contrast */
-            font-weight: 700;
-        }
-        
-        /* Card Styling for content items */
-        .content-card {
-            background-color: #ffffff; /* White cards */
-            border: 1px solid #d1d5db; /* Light gray border */
-            border-left: 4px solid #3b82f6; /* Accent border for visual hierarchy */
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .content-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle blue-tinted shadow */
-        }
-
-        /* Unified skill badge style (Clean look) */
-        .skill-badge {
-            transition: transform 0.2s ease-in-out, background-color 0.2s, color 0.2s;
-            background-color: #e0f2fe; /* Light Blue 100 */
-            color: #1e40af; /* Dark Blue 800 */
-            font-family: 'Source Code Pro', monospace;
-            font-weight: 600;
-            cursor: default;
-        }
-        .skill-badge:hover {
-            transform: scale(1.05);
-            background-color: #3b82f6; /* Accent blue on hover */
-            color: white;
-            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.4);
-        }
-        
-        /* Link styling in light mode */
-        a {
-            color: #3b82f6;
-            transition: color 0.2s;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #1e40af;
-            text-decoration: underline;
-        }
-        
-        /* Sidebar Contact Icons */
-        .sidebar-contact-item {
-            display: flex;
-            align-items: center;
-            padding: 0.6rem 0;
-            font-size: 0.95rem;
-            color: #6b7280; /* Gray 500 */
-        }
-        .sidebar-contact-item a {
-            color: #4b5563; /* Gray 600 */
-        }
-        .sidebar-contact-item a:hover {
-            color: #3b82f6;
-            text-decoration: none;
-        }
-
-        /* Responsive adjustments for mobile */
-        @media (max-width: 1023px) {
-            body {
-                /* Remove fixed padding for mobile and let the flow work naturally */
-                padding-top: 0;
-            }
-            .sidebar {
-                border-right: none;
-                border-bottom: 1px solid #e5e7eb;
-                height: auto;
-                max-height: 50vh; /* Limits sidebar height on small screens */
-            }
-            .content-panel {
-                height: auto;
-                overflow-y: visible; /* Allows normal scroll flow on mobile */
-            }
-            .main-grid {
-                 display: block; 
-                 height: auto;
-            }
-            /* Adjust fixed nav for mobile to be less intrusive */
-             .fixed-nav {
-                 position: sticky; /* Make it sticky instead of fixed on mobile */
-                 top: 0;
-                 padding: 0.75rem 1rem;
-                 background-color: #f8fafc; /* Match body background on mobile */
-                 box-shadow: none; /* Less aggressive shadow on mobile */
-             }
-             .fixed-nav a {
-                 padding: 0.5rem 0.75rem; /* Better touch target for mobile */
-             }
-        }
-
-    </style>
-    
-    <script>
-        // Initialize Tailwind and configure custom colors
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-bg': '#f8fafc', /* Slate 50 */
-                        'secondary-bg': '#ffffff', /* White */
-                        'accent-blue': '#3b82f6', /* Blue 500 */
-                        'text-dark': '#1f2937', /* Gray 900 */
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'sans-serif'],
-                        'mono': ['Source Code Pro', 'monospace'],
-                    },
-                }
-            }
-        }
-
-        // Function to initialize Lucide icons and add interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            
-            // Interactivity: Smooth Scrolling for Navigation 
-            const navLinks = document.querySelectorAll('.nav-link-scroll');
-            
-            // Check for desktop environment (where only content-panel scrolls)
-            const isDesktop = window.innerWidth >= 1024;
-            
-            // Get the scrollable container and the fixed navigation bar
-            const scrollContainer = document.getElementById('content-panel');
-            const fixedNav = document.getElementById('fixed-nav');
-
-            // Determine the height of the navigation bar for scrolling offset
-            let navHeight = fixedNav.offsetHeight;
-
-            // On mobile, the nav is sticky, so we need to use the standard document scroll
-            // and the offset is based on the nav height.
-            if (!isDesktop) {
-                 // For mobile, we use the standard body scroll and calculate the target position
-                 // relative to the entire document.
-                 navHeight = 0; // The mobile nav is sticky inside the body scroll, so we use 0 offset here.
-                 // We rely on the browser's default scroll behavior to handle the sticky nav offset correctly.
-            }
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    
-                    if (targetElement && scrollContainer) {
-                        
-                        if (isDesktop) {
-                             // Desktop: Content-panel scrolls, position relative to its top
-                            const targetOffsetTop = targetElement.offsetTop;
-                            const targetScroll = targetOffsetTop - fixedNav.offsetHeight - 24; // Added small buffer (24px)
-                            
-                            scrollContainer.scrollTo({
-                                top: targetScroll,
-                                behavior: 'smooth'
-                            });
-                        } else {
-                            // Mobile: Body scrolls, position relative to viewport top
-                            // Get the element's position relative to the entire document, then subtract the fixed nav height.
-                            const bodyScrollTop = window.scrollY;
-                            const elementTop = targetElement.getBoundingClientRect().top + bodyScrollTop;
-                            
-                            // Scroll to the calculated position, minus the fixed nav's height, plus a small buffer
-                            window.scrollTo({
-                                top: elementTop - fixedNav.offsetHeight - 24, 
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-            
-            // Recalculate nav height on resize for better offset accuracy
-            window.addEventListener('resize', () => {
-                navHeight = fixedNav.offsetHeight;
-            });
-        });
-    </script>
+  <style>
+    :root {
+      --ink: #07101f;
+      --panel: #0d182b;
+      --line: rgba(148, 163, 184, .15);
+      --cyan: #46d9ff;
+      --indigo: #7c83ff;
+      --muted: #9aacbf;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--ink); }
+    body {
+      margin: 0;
+      color: #eef6ff;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(69, 94, 252, .12), transparent 31rem),
+        radial-gradient(circle at 85% 42%, rgba(16, 185, 214, .08), transparent 34rem),
+        var(--ink);
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(70, 217, 255, .28); color: #fff; }
+    .noise::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    }
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(124, 131, 255, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(70, 217, 255, .06) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, #000 45%, transparent 98%);
+    }
+    .hero-aurora {
+      position: absolute;
+      width: 52rem;
+      height: 52rem;
+      border-radius: 50%;
+      filter: blur(95px);
+      opacity: .16;
+      background: conic-gradient(from 120deg, #00c2ff, #6d5dfc, #0ee0b2, #00c2ff);
+      animation: aurora 15s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    @keyframes aurora {
+      from { transform: translate3d(-18%, -14%, 0) rotate(0deg) scale(.85); }
+      to { transform: translate3d(48%, 14%, 0) rotate(95deg) scale(1.12); }
+    }
+    .gradient-text {
+      background: linear-gradient(110deg, #ffffff 10%, #b9efff 48%, #9a9fff 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .eyebrow { letter-spacing: .2em; text-transform: uppercase; font-size: .72rem; font-weight: 700; color: #72ddf7; }
+    .glass {
+      background: linear-gradient(145deg, rgba(18, 34, 58, .82), rgba(8, 19, 35, .68));
+      border: 1px solid var(--line);
+      box-shadow: inset 0 1px rgba(255,255,255,.035), 0 20px 70px rgba(0,0,0,.18);
+      backdrop-filter: blur(16px);
+    }
+    .nav-shell { transition: background .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .nav-shell.scrolled { background: rgba(5, 13, 26, .84); border-bottom-color: rgba(148,163,184,.14); box-shadow: 0 12px 38px rgba(0,0,0,.18); backdrop-filter: blur(20px); }
+    .nav-link { color: #b4c1d2; transition: color .2s ease; }
+    .nav-link:hover, .nav-link.active { color: #fff; }
+    .nav-link.active::after { transform: scaleX(1); }
+    .nav-link::after { content: ''; display: block; height: 1px; margin-top: 4px; background: var(--cyan); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+    .btn-primary, .btn-secondary, .social-button { transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+    .btn-primary:hover, .btn-secondary:hover, .social-button:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(120deg, #6366f1, #22b8cf); box-shadow: 0 14px 34px rgba(69, 94, 252, .22); }
+    .btn-primary:hover { box-shadow: 0 17px 42px rgba(70, 217, 255, .24); }
+    .section-line { width: 3rem; height: 2px; background: linear-gradient(90deg, var(--indigo), var(--cyan)); }
+    .interest-card, .pub-card { position: relative; overflow: hidden; }
+    .interest-card::before, .pub-card::before {
+      content: '';
+      position: absolute;
+      width: 11rem;
+      height: 11rem;
+      right: -7rem;
+      top: -7rem;
+      border-radius: 50%;
+      background: var(--accent, rgba(70,217,255,.15));
+      filter: blur(35px);
+      opacity: .7;
+      transition: transform .35s ease, opacity .35s ease;
+    }
+    .interest-card:hover::before, .pub-card:hover::before { transform: scale(1.45); opacity: 1; }
+    .interest-card { transition: transform .25s ease, border-color .25s ease; }
+    .interest-card:hover { transform: translateY(-5px); border-color: rgba(70,217,255,.35); }
+    .pub-card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .pub-card:hover { transform: translateY(-5px); border-color: rgba(124,131,255,.35); box-shadow: 0 22px 55px rgba(0,0,0,.24); }
+    .pub-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+    .author-self { font-weight: 800; color: #fff; text-decoration: underline; text-decoration-color: rgba(70,217,255,.65); text-underline-offset: 3px; }
+    .filter-btn { color: #a9bacb; border: 1px solid rgba(148,163,184,.15); transition: all .2s ease; }
+    .filter-btn:hover { color: #fff; border-color: rgba(70,217,255,.3); }
+    .filter-btn.active { color: #06101e; background: #9eeeff; border-color: #9eeeff; font-weight: 700; }
+    .status-published { color: #6ee7b7; background: rgba(16,185,129,.1); border-color: rgba(16,185,129,.23); }
+    .status-review { color: #fcd34d; background: rgba(245,158,11,.09); border-color: rgba(245,158,11,.22); }
+    .status-conference { color: #aeb4ff; background: rgba(124,131,255,.1); border-color: rgba(124,131,255,.22); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    #progress { transform-origin: left; transform: scaleX(0); }
+    .modal-backdrop { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    .modal-panel { transform: translateX(102%); transition: transform .38s cubic-bezier(.2,.8,.2,1); }
+    .modal-backdrop.open { opacity: 1; pointer-events: auto; }
+    .modal-backdrop.open .modal-panel { transform: translateX(0); }
+    .modal-scrollbar::-webkit-scrollbar { width: 8px; }
+    .modal-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .modal-scrollbar::-webkit-scrollbar-thumb { background: #253751; border-radius: 10px; }
+    .metric-cell { background: rgba(124,131,255,.075); border: 1px solid rgba(124,131,255,.16); }
+    .gallery-card img { transition: transform .35s ease, opacity .25s ease; }
+    .gallery-card:hover img { transform: scale(1.025); }
+    .gallery-card.image-error::before { content: 'Preview unavailable — open source asset'; display: grid; place-items: center; min-height: 12rem; color: #93a7bc; padding: 1rem; text-align: center; }
+    .gallery-card.image-error img { display: none; }
+    .timeline-dot { box-shadow: 0 0 0 6px rgba(70,217,255,.08), 0 0 28px rgba(70,217,255,.2); }
+    @media (max-width: 767px) {
+      .hero-grid { background-size: 38px 38px; }
+      .modal-panel { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+      #particleCanvas { display: none; }
+    }
+  </style>
 </head>
-<body class="antialiased">
 
-    <!-- TOP-LEVEL FIXED NAVIGATION MENU (Now justified to the right) -->
-    <nav id="fixed-nav" class="fixed-nav flex flex-wrap justify-end gap-4 lg:gap-8 font-semibold text-gray-600 text-sm">
-        <a href="#about" class="nav-link-scroll flex items-center p-2 rounded-lg hover:bg-gray-200 transition duration-150 hover:text-accent-blue">
-            <i data-lucide="user" class="w-4 h-4 mr-1 lg:mr-2 text-accent-blue"></i> About Me
-        </a>
-        <a href="#education" class="nav-link-scroll flex items-center p-2 rounded-lg hover:bg-gray-200 transition duration-150 hover:text-accent-blue">
-            <i data-lucide="graduation-cap" class="w-4 h-4 mr-1 lg:mr-2 text-accent-blue"></i> Education
-        </a>
-        <a href="#experience" class="nav-link-scroll flex items-center p-2 rounded-lg hover:bg-gray-200 transition duration-150 hover:text-accent-blue">
-            <i data-lucide="briefcase" class="w-4 h-4 mr-1 lg:mr-2 text-accent-blue"></i> Experience
-        </a>
-        <a href="#skills" class="nav-link-scroll flex items-center p-2 rounded-lg hover:bg-gray-200 transition duration-150 hover:text-accent-blue">
-            <i data-lucide="bolt" class="w-4 h-4 mr-1 lg:mr-2 text-accent-blue"></i> Skills
-        </a>
-        <a href="#publication" class="nav-link-scroll flex items-center p-2 rounded-lg hover:bg-gray-200 transition duration-150 hover:text-accent-blue">
-            <i data-lucide="file-text" class="w-4 h-4 mr-1 lg:mr-2 text-accent-blue"></i> Publications
-        </a>
+<body class="font-sans antialiased">
+  <div id="progress" class="fixed left-0 top-0 z-[80] h-[2px] w-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-300"></div>
+
+  <header id="navbar" class="nav-shell fixed inset-x-0 top-0 z-50 border-b border-transparent">
+    <nav class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Primary navigation">
+      <a href="#home" class="group flex items-center gap-3" aria-label="Syed Shayan Ali Shah — home">
+        <span class="grid h-9 w-9 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 font-display text-sm font-extrabold text-cyan-200 group-hover:border-cyan-300/45">SS</span>
+        <span class="hidden font-display text-sm font-bold tracking-tight text-white sm:block">Syed Shayan Ali Shah</span>
+      </a>
+      <div class="hidden items-center gap-7 text-sm font-medium md:flex">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#research">Research</a>
+        <a class="nav-link" href="#publications">Publications</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <a href="mailto:shayanalimscs@gmail.com" class="hidden rounded-full border border-slate-600/60 bg-slate-800/40 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-cyan-300/40 sm:inline-flex">
+        <span class="mr-2 h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>Open to collaboration
+      </a>
+      <button id="menuButton" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-700 text-slate-200 md:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </nav>
-
-
-    <!-- MAIN CONTENT GRID (Now sits below the fixed navigation) -->
-    <div class="main-grid">
-        
-        <!-- Left Sidebar: Fixed Profile and Links -->
-        <aside class="sidebar lg:sticky lg:top-0">
-            <div class="flex flex-col items-center text-center space-y-6">
-                
-                <!-- Profile Image -->
-                <div class="relative w-32 h-32 rounded-full overflow-hidden shadow-xl border-4 border-accent-blue">
-                    <img src="https://raw.githubusercontent.com/ItsCodeBakery/itscodebakery.github.io/main/assets/502465705_29672271555750259_7763675694741651502_n.jpg" alt="Syed Shayan Ali Shah" class="w-full h-full object-cover">
-                </div>
-                
-                <!-- Name and Creative Tagline -->
-                <div class="space-y-1">
-                    <h1 class="text-3xl font-extrabold text-gray-900 tracking-wide">SYED SHAYAN ALI SHAH</h1>
-                    <p class="text-sm font-code text-gray-500 pt-2">
-                        I am a <span class="font-semibold text-gray-700">Programmer</span> in my mind.
-                    </p>
-                    <p class="text-sm font-code text-gray-500">
-                        An <span class="text-green-600 font-semibold">Educator</span> by profession.
-                    </p>
-                </div>
-                
-                <!-- Contact Links (Bottom of Sidebar) -->
-                <div class="w-full pt-6 space-y-1.5 border-t border-gray-200">
-                    
-                    <div class="sidebar-contact-item">
-                        <i data-lucide="mail" class="w-5 h-5 mr-3 text-red-500"></i>
-                        <a href="mailto:shayan.ali@imsciences.edu.pk">shayan.ali@imsciences.edu.pk</a>
-                    </div>
-                    <div class="sidebar-contact-item">
-                        <i data-lucide="phone" class="w-5 h-5 mr-3 text-green-600"></i>
-                        <span>(+92) 3239257850</span>
-                    </div>
-                    <div class="sidebar-contact-item">
-                        <i data-lucide="linkedin" class="w-5 h-5 mr-3 text-blue-600"></i>
-                        <a href="https://www.linkedin.com/in/itsshayanprofile/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-                    </div>
-                    <div class="sidebar-contact-item">
-                        <i data-lucide="github" class="w-5 h-5 mr-3 text-gray-700"></i>
-                        <a href="https://github.com/ItsCodeBakery" target="_blank" rel="noopener noreferrer">GitHub /ItsCodeBakery</a>
-                    </div>
-                </div>
-
-            </div>
-        </aside>
-
-        <!-- Right Content Panel: Scrollable Sections -->
-        <main id="content-panel" class="content-panel">
-
-            <!-- About Me Section -->
-            <section id="about" class="mb-12">
-                <h2 class="text-2xl font-bold mb-6 section-heading">
-                    <i data-lucide="user" class="inline-block w-5 h-5 mr-2 text-accent-blue"></i> About Me
-                </h2>
-                <div class="content-card p-6 rounded-xl shadow-lg">
-                    <p class="text-base leading-relaxed text-gray-700">
-                        I am a <span class="font-bold text-gray-900">Lecturer in Computer Science</span> at Government College of Management Sciences, Peshawar (Pakistan). I completed my MS in Computer Science at IMSciences with <span class="font-bold text-yellow-600">Distinction (Gold Medal)</span>. As a prospective PhD student, my research interests center on <span class="font-bold text-accent-blue">computer vision</span>, <span class="font-bold text-accent-blue">self-supervised learning</span>, <span class="font-bold text-accent-blue">LLMs/VLMs</span>, and <span class="font-bold text-accent-blue">medical imaging</span>. I build high-accuracy, efficient models with strong generalization and clear interpretability. I value open, reproducible research. Beyond academia, I'm a <span class="font-bold text-gray-900">Top-Rated freelancer</span>, passionate about programming, self-motivated, and an <span class="font-bold text-gray-900">effective team player</span>.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Education Section -->
-            <section id="education" class="mb-12">
-                <h2 class="text-2xl font-bold mb-6 section-heading">
-                    <i data-lucide="graduation-cap" class="inline-block w-5 h-5 mr-2 text-accent-blue"></i> Education
-                </h2>
-                <!-- Restored to stacked layout, using space-y-6 for separation -->
-                <div class="space-y-6">
-                    <!-- MS Degree -->
-                    <div class="content-card p-5 rounded-xl shadow-md">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">MS Computer Science</h3>
-                            <span class="text-sm text-gray-500 font-code">Oct 2017 - Feb 2020</span>
-                        </div>
-                        <p class="text-gray-600 mb-2">Institute of Management Sciences (IMSciences), Peshawar</p>
-                        <div class="flex flex-wrap items-center space-x-4 text-sm">
-                            <span class="font-bold text-yellow-600 flex items-center"><i data-lucide="star" class="w-4 h-4 mr-1 fill-yellow-500 text-yellow-500"></i> Gold Medal (Top of Class)</span>
-                            <span class="text-gray-400">|</span>
-                            <span class="text-gray-500 font-code">CGPA: 3.9/4.0</span>
-                        </div>
-                    </div>
-
-                    <!-- BS Degree -->
-                    <div class="content-card p-5 rounded-xl shadow-md">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">BS Computer Science</h3>
-                            <span class="text-sm text-gray-500 font-code">Sep 2011 - Mar 2016</span>
-                        </div>
-                        <p class="text-gray-600 mb-2">University of Peshawar, Khyber Pakhtunkhwa, Pakistan</p>
-                        <div class="flex items-center space-x-4 text-sm">
-                            <!-- Retained the darker color for visibility -->
-                            <span class="text-gray-700 font-code">CGPA: 3.6/4.0</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience" class="mb-12">
-                <h2 class="text-2xl font-bold mb-6 section-heading">
-                    <i data-lucide="briefcase" class="inline-block w-5 h-5 mr-2 text-accent-blue"></i> Experience
-                </h2>
-                <div class="space-y-6">
-                    <!-- GCMS Experience -->
-                    <div class="content-card p-5 rounded-xl shadow-md">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">Lecturer in Computer Science</h3>
-                            <span class="text-sm text-gray-500 font-code">Nov 2018 - Present</span>
-                        </div>
-                        <p class="text-gray-600 mb-2">Government College of Management Sciences (GCMS), Peshawar</p>
-                        <p class="text-sm text-gray-500"><span class="font-bold text-gray-700">Subjects:</span> Programming Fundamentals, Database Development, Introduction to C++.</p>
-                    </div>
-
-                    <!-- IMSciences Experience -->
-                    <div class="content-card p-5 rounded-xl shadow-md">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">Lecturer in Computer Science (Visiting)</h3>
-                            <span class="text-sm text-gray-500 font-code">Sep 2024 - Present</span>
-                        </div>
-                        <p class="text-gray-600 mb-2">Institute of Management Sciences (IMSciences)</p>
-                        <p class="text-sm text-gray-500"><span class="font-bold text-gray-700">Subjects:</span> Data Structures, Data Visualization, DBMS (PostgreSQL), Introduction to Machine Learning.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Skills Section -->
-            <section id="skills" class="mb-12">
-                <h2 class="text-2xl font-bold mb-6 section-heading">
-                    <i data-lucide="bolt" class="inline-block w-5 h-5 mr-2 text-accent-blue"></i> Skills & Expertise
-                </h2>
-                <div class="content-card p-6 sm:p-8 rounded-xl shadow-xl">
-                    
-                    <!-- 1. Core Programming -->
-                    <div class="mb-6 pb-6 border-b border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i data-lucide="code" class="w-5 h-5 mr-2 text-red-500"></i> Core Programming Languages</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">Python</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">Java</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">C++</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">C#</span>
-                        </div>
-                    </div>
-
-                    <!-- 2. Deep Learning & CV -->
-                    <div class="mb-6 pb-6 border-b border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i data-lucide="cpu" class="w-5 h-5 mr-2 text-cyan-600"></i> Deep Learning & Computer Vision (CV)</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">Vision Transformers</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">CNNs</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">Contrastive Learning</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">GANs</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">Diffusion Models</span>
-                        </div>
-                    </div>
-
-                    <!-- 3. LLM & Multimodal AI -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i data-lucide="message-square-text" class="w-5 h-5 mr-2 text-purple-600"></i> LLM & Multimodal AI</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">Hugging Face Transformers</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">CLIP</span>
-                            <span class="skill-badge px-3 py-1 text-sm rounded-md shadow-sm">LangChain</span>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Publication Section -->
-            <section id="publication" class="mb-12">
-                <h2 class="text-2xl font-bold mb-6 section-heading">
-                    <i data-lucide="file-text" class="inline-block w-5 h-5 mr-2 text-accent-blue"></i> Key Research Publications
-                </h2>
-                <div class="space-y-8">
-
-                    <!-- PUBLICATION 1: PlantCLR -->
-                    <div class="content-card p-6 sm:p-8 rounded-xl shadow-xl">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">PlantCLR: Leveraging Self-Supervised Contrastive Learning for Generalizable Plant Disease Detection</h3>
-                        <p class="text-sm text-gray-500 italic mb-5">Syed Shayan Ali Shah, et al. | Submitted Manuscript | Smart Agriculture Technology (IF: 5.7)</p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                            <!-- Overview - Now uses flex to vertically center content -->
-                            <div class="flex flex-col justify-center h-full">
-                                <h4 class="text-lg font-semibold text-accent-blue mb-2">Project Overview</h4>
-                                <p class="text-gray-700 mb-4 leading-relaxed text-sm">
-                                    This research introduces <span class="font-bold text-gray-900">PlantCLR</span>, a novel framework utilizing <span class="font-bold text-gray-900">self-supervised contrastive learning</span> to significantly improve the generalization capability of plant disease detection models. The approach addresses the challenge of data scarcity and environmental variability, allowing the model to perform robustly across diverse, real-world datasets and scenarios.
-                                </p>
-                                <a href="https://github.com/ItsCodeBakery/PlantPathalogy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-300 w-fit">
-                                    <i data-lucide="github" class="w-4 h-4 mr-2"></i> View Code
-                                </a>
-                            </div>
-
-                            <!-- Methodology Image - Now uses flex to vertically center diagram -->
-                            <div class="flex flex-col justify-center h-full">
-                                <h4 class="text-lg font-semibold text-accent-blue mb-2">Methodology Diagram</h4>
-                                <div class="rounded-lg overflow-hidden border border-gray-300 shadow-md">
-                                     <!-- The image URL for PlantCLR diagram -->
-                                     <img src="https://raw.githubusercontent.com/ItsCodeBakery/itscodebakery.github.io/main/assets/CLR_Dia.png" alt="Diagram of the PlantCLR Self-Supervised Contrastive Learning Framework" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=PlantCLR+Diagram+Placeholder';">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- PUBLICATION 2: XDR-NET (UPDATED STATUS) -->
-                    <div class="content-card p-6 sm:p-8 rounded-xl shadow-xl">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">XDR-NET: Hybrid CNN–Transformer Network for Diabetic Retinopathy Detection</h3>
-                        <p class="text-sm text-gray-500 italic mb-5">Syed Shayan Ali Shah, et al. | Submitted to Scientific African (IF: 3.9)</p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                            <!-- Overview - Now uses flex to vertically center content -->
-                            <div class="flex flex-col justify-center h-full">
-                                <h4 class="text-lg font-semibold text-accent-blue mb-2">Project Overview</h4>
-                                <p class="text-gray-700 mb-4 leading-relaxed text-sm">
-                                    XDR-Net is an explainable hybrid CNN–Vision Transformer (ViT) model designed for automated Diabetic Retinopathy (ICDR 0–4) grading from high-resolution fundus images. The architecture effectively combines local feature extraction (CNN) with global spatial reasoning (ViT) to accurately detect multi-scale lesions (microaneurysms, hemorrhages, exudates) under varying image conditions.
-                                </p>
-                                <p class="text-gray-700 mb-4 leading-relaxed text-sm">
-                                    The model achieved superior performance on the APTOS-2019 dataset, boasting <span class="font-bold text-gray-900">97.30% Validation F1-score</span> and <span class="font-bold text-gray-900">97.88% AUC</span>. It also provides calibrated probabilities and Grad-CAM heatmaps for case-level interpretability.
-                                </p>
-                                <a href="https://github.com/ItsCodeBakery/XDR-NET" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-300 w-fit">
-                                    <i data-lucide="github" class="w-4 h-4 mr-2"></i> View Code
-                                </a>
-                            </div>
-
-                            <!-- Methodology Image - Now uses flex to vertically center diagram -->
-                            <div class="flex flex-col justify-center h-full">
-                                <h4 class="text-lg font-semibold text-accent-blue mb-2">Methodology Diagram</h4>
-                                <div class="rounded-lg overflow-hidden border border-gray-300 shadow-md">
-                                    <img src="https://raw.githubusercontent.com/ItsCodeBakery/itscodebakery.github.io/main/assets/METHODLOGY.png" alt="Diagram of the XDR-NET Hybrid CNN-Transformer Architecture" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=XDR-NET+Diagram+Placeholder';">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-
-            <!-- Footer for the content area -->
-            <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-400 font-code">
-                <p>// End of File: SYED_SHAYAN_ALI_SHAH.profile</p>
-                <p>&copy; 2025 Syed Shayan Ali Shah. Built with Code and Science.</p>
-            </footer>
-
-        </main>
+    <div id="mobileMenu" class="hidden border-t border-slate-800 bg-[#07101f]/95 px-5 py-5 backdrop-blur-xl md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold text-slate-200">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#contact">Contact</a>
+      </div>
     </div>
+  </header>
 
+  <main>
+    <section id="home" class="noise relative flex min-h-screen items-center overflow-hidden pt-20">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="hero-aurora -left-48 -top-52"></div>
+      <canvas id="particleCanvas" class="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true"></canvas>
+      <div class="relative z-10 mx-auto grid w-full max-w-7xl gap-14 px-5 py-24 lg:grid-cols-[1.35fr_.65fr] lg:px-8">
+        <div class="self-center">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/[.06] px-4 py-2 text-xs font-semibold text-cyan-100">
+            <i class="fa-solid fa-microscope text-cyan-300"></i>
+            Computer vision for consequential real-world problems
+          </div>
+          <p class="eyebrow mb-4">AI / ML Researcher</p>
+          <h1 class="gradient-text max-w-4xl font-display text-5xl font-extrabold leading-[1.04] tracking-[-.045em] sm:text-6xl lg:text-7xl">
+            Syed Shayan<br />Ali Shah
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+            Building trustworthy visual intelligence for <span class="font-semibold text-white">medical diagnosis</span>, precision agriculture, and data-efficient learning.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#publications" class="btn-primary rounded-full px-6 py-3.5 text-sm font-bold text-white">Explore research <i class="fa-solid fa-arrow-down ml-2 text-xs"></i></a>
+            <a href="mailto:shayanalimscs@gmail.com" class="btn-secondary rounded-full border border-slate-600 bg-slate-800/40 px-6 py-3.5 text-sm font-bold text-white hover:border-cyan-300/40 hover:bg-slate-800/70">Start a conversation</a>
+          </div>
+          <div class="mt-8 flex flex-wrap items-center gap-3" aria-label="Academic and professional profiles">
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://scholar.google.com/citations?hl=en&user=QaPiey0AAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://orcid.org/0009-0007-5335-5285" target="_blank" rel="noopener" aria-label="ORCID"><i class="fa-brands fa-orcid text-lg"></i></a>
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://www.linkedin.com/in/syedshayanalishah" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://github.com/itsCodeBakery" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <span class="ml-2 text-xs text-slate-500">Peshawar, Pakistan · ORCID verified</span>
+          </div>
+        </div>
+
+        <aside class="glass relative self-center rounded-[2rem] p-6 shadow-glow sm:p-8" aria-label="Research profile summary">
+          <div class="absolute -right-3 -top-3 h-20 w-20 rounded-3xl border border-indigo-400/15 bg-indigo-400/5"></div>
+          <div class="relative">
+            <div class="mb-7 flex items-start justify-between">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.18em] text-slate-500">Research profile</p>
+                <p class="mt-2 font-display text-2xl font-bold text-white">Evidence-driven AI</p>
+              </div>
+              <span class="grid h-11 w-11 place-items-center rounded-2xl bg-indigo-400/10 text-indigo-300"><i class="fa-solid fa-network-wired"></i></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-2xl border border-slate-700/60 bg-slate-950/35 p-4"><p class="font-display text-3xl font-extrabold text-white">5</p><p class="mt-1 text-xs text-slate-400">Selected works</p></div>
+              <div class="rounded-2xl border border-slate-700/60 bg-slate-950/35 p-4"><p class="font-display text-3xl font-extrabold text-white">Q1</p><p class="mt-1 text-xs text-slate-400">Journal venue</p></div>
+              <div class="rounded-2xl border border-slate-700/60 bg-slate-950/35 p-4"><p class="font-display text-3xl font-extrabold text-cyan-200">99.1%</p><p class="mt-1 text-xs text-slate-400">PlantCLR accuracy</p></div>
+              <div class="rounded-2xl border border-slate-700/60 bg-slate-950/35 p-4"><p class="font-display text-3xl font-extrabold text-indigo-200">3.90</p><p class="mt-1 text-xs text-slate-400">MS CGPA / 4.00</p></div>
+            </div>
+            <div class="mt-5 rounded-2xl border border-cyan-300/10 bg-cyan-300/[.045] p-4">
+              <div class="flex gap-3"><i class="fa-solid fa-award mt-1 text-amber-300"></i><div><p class="text-sm font-bold text-white">MS Computer Science · Gold Medalist</p><p class="mt-1 text-xs leading-5 text-slate-400">Institute of Management Sciences, Peshawar · specialization in Artificial Intelligence</p></div></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[.2em] text-slate-600 sm:flex"><span>Scroll to explore</span><span class="h-9 w-px bg-gradient-to-b from-slate-500 to-transparent"></span></div>
+    </section>
+
+    <section id="about" class="relative py-24 sm:py-32">
+      <div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+        <div class="reveal">
+          <p class="eyebrow">About</p><div class="section-line mt-4"></div>
+          <h2 class="mt-7 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Research with clarity, rigor, and purpose.</h2>
+        </div>
+        <div class="reveal">
+          <p class="text-lg leading-8 text-slate-300">I am a computer science lecturer and AI researcher focused on developing models that learn from limited labels, generalize across domains, and remain interpretable to the people who use them. My work connects methodological innovation with high-impact applications in medical imaging and plant health.</p>
+          <p class="mt-5 leading-7 text-slate-400">As an MS Computer Science Gold Medalist, I combine research practice with more than seven years of teaching, curriculum development, and academic technology leadership. I am especially interested in doctoral collaborations spanning trustworthy medical AI, 3D image understanding, and multimodal foundation models.</p>
+          <div class="mt-9 grid gap-4 sm:grid-cols-2">
+            <div class="glass rounded-2xl p-5"><div class="mb-4 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300"><i class="fa-solid fa-flask"></i></span><h3 class="font-bold text-white">Research practice</h3></div><p class="text-sm leading-6 text-slate-400">Method design, controlled experiments, statistical evaluation, explainability, and reproducible research.</p></div>
+            <div class="glass rounded-2xl p-5"><div class="mb-4 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-indigo-400/10 text-indigo-300"><i class="fa-solid fa-chalkboard-user"></i></span><h3 class="font-bold text-white">Academic leadership</h3></div><p class="text-sm leading-6 text-slate-400">Lecturer, curriculum expert, master trainer, and institutional focal person for digital academic systems.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="border-y border-slate-800/70 bg-slate-900/20 py-24 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div><p class="eyebrow">Research interests</p><div class="section-line mt-4"></div><h2 class="mt-7 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Three connected frontiers</h2></div>
+          <p class="max-w-xl text-sm leading-6 text-slate-400">From pixel-level evidence to multimodal reasoning, my agenda centers on dependable models for complex and data-constrained environments.</p>
+        </div>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <article class="interest-card glass reveal rounded-[1.7rem] p-7" style="--accent:rgba(70,217,255,.17)">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl border border-cyan-300/15 bg-cyan-300/10 text-xl text-cyan-200"><i class="fa-solid fa-eye"></i></div>
+            <p class="mt-8 text-xs font-semibold uppercase tracking-[.17em] text-cyan-300">01 · Visual intelligence</p><h3 class="mt-3 font-display text-2xl font-bold text-white">Computer Vision</h3><p class="mt-4 text-sm leading-7 text-slate-400">Representation learning, fine-grained recognition, robust segmentation, explainable vision, and efficient deployment.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">Self-supervision</span><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">Segmentation</span><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">XAI</span></div>
+          </article>
+          <article class="interest-card glass reveal rounded-[1.7rem] p-7" style="--accent:rgba(124,131,255,.18)">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl border border-indigo-300/15 bg-indigo-300/10 text-xl text-indigo-200"><i class="fa-solid fa-heart-pulse"></i></div>
+            <p class="mt-8 text-xs font-semibold uppercase tracking-[.17em] text-indigo-300">02 · Clinical impact</p><h3 class="mt-3 font-display text-2xl font-bold text-white">Medical Image Analysis</h3><p class="mt-4 text-sm leading-7 text-slate-400">Weakly supervised lesion segmentation, retinal disease analysis, uncertainty estimation, and clinically useful decision support.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">CT</span><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">Fundus</span><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">Uncertainty</span></div>
+          </article>
+          <article class="interest-card glass reveal rounded-[1.7rem] p-7" style="--accent:rgba(45,212,191,.16)">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl border border-teal-300/15 bg-teal-300/10 text-xl text-teal-200"><i class="fa-solid fa-cubes-stacked"></i></div>
+            <p class="mt-8 text-xs font-semibold uppercase tracking-[.17em] text-teal-300">03 · Multimodal reasoning</p><h3 class="mt-3 font-display text-2xl font-bold text-white">Vision-Language Models</h3><p class="mt-4 text-sm leading-7 text-slate-400">Grounded visual reasoning, language-guided segmentation, multimodal fusion, and safer foundation models for specialized domains.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">VLMs</span><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">Grounding</span><span class="rounded-full bg-slate-800 px-3 py-1.5 text-[11px] text-slate-300">Multimodal AI</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-3xl">
+          <p class="eyebrow">Selected publications</p><div class="section-line mt-4"></div>
+          <h2 class="mt-7 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Research, opened up.</h2>
+          <p class="mt-4 leading-7 text-slate-400">Select a paper to examine its abstract, contribution, performance evidence, and visual assets.</p>
+        </div>
+        <div class="reveal mt-9 flex flex-wrap gap-2" role="group" aria-label="Filter publications">
+          <button class="filter-btn active rounded-full px-4 py-2 text-xs" data-filter="all">All works</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-xs" data-filter="journal">Journals</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-xs" data-filter="review">Under review</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-xs" data-filter="conference">Conferences</button>
+        </div>
+        <div id="publicationGrid" class="mt-8 grid gap-5 md:grid-cols-2" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="border-y border-slate-800/70 bg-slate-900/20 py-24">
+      <div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[.72fr_1.28fr] lg:px-8">
+        <div class="reveal"><p class="eyebrow">Academic path</p><div class="section-line mt-4"></div><h2 class="mt-7 font-display text-3xl font-bold text-white">Scholar. Educator. Builder.</h2><p class="mt-4 text-sm leading-7 text-slate-400">A research trajectory grounded in academic excellence and sustained teaching leadership.</p></div>
+        <div class="reveal relative border-l border-slate-700/70 pl-8">
+          <div class="relative pb-10"><span class="timeline-dot absolute -left-[37px] top-1 h-3 w-3 rounded-full bg-cyan-300"></span><p class="text-xs font-semibold uppercase tracking-[.16em] text-cyan-300">2026 · Research</p><h3 class="mt-2 font-display text-xl font-bold text-white">Published in Scientific Reports</h3><p class="mt-2 text-sm leading-6 text-slate-400">First-author work on contrastive self-supervised learning for generalizable plant disease detection.</p></div>
+          <div class="relative pb-10"><span class="timeline-dot absolute -left-[37px] top-1 h-3 w-3 rounded-full bg-indigo-300"></span><p class="text-xs font-semibold uppercase tracking-[.16em] text-indigo-300">2020 · Education</p><h3 class="mt-2 font-display text-xl font-bold text-white">MS Computer Science · Gold Medal</h3><p class="mt-2 text-sm leading-6 text-slate-400">CGPA 3.90/4.00, ranked first in a cohort of 60, with specialization in Artificial Intelligence.</p></div>
+          <div class="relative"><span class="timeline-dot absolute -left-[37px] top-1 h-3 w-3 rounded-full bg-teal-300"></span><p class="text-xs font-semibold uppercase tracking-[.16em] text-teal-300">2018–Present · Teaching</p><h3 class="mt-2 font-display text-xl font-bold text-white">Lecturer in Computer Science</h3><p class="mt-2 text-sm leading-6 text-slate-400">Teaching computing, developing curricula, and leading digital academic initiatives in higher education.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="relative overflow-hidden py-24 sm:py-32">
+      <div class="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-indigo-950/25 to-transparent"></div>
+      <div class="relative mx-auto max-w-5xl px-5 text-center lg:px-8">
+        <div class="reveal glass rounded-[2rem] px-6 py-14 sm:px-14">
+          <span class="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200"><i class="fa-regular fa-paper-plane"></i></span>
+          <p class="eyebrow mt-7">Let’s collaborate</p>
+          <h2 class="mt-5 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl">Interested in dependable AI?</h2>
+          <p class="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">I welcome conversations about PhD supervision, joint research, medical imaging, computer vision, and academic collaboration.</p>
+          <a href="mailto:shayanalimscs@gmail.com" class="btn-primary mt-8 inline-flex items-center rounded-full px-7 py-4 text-sm font-bold text-white"><i class="fa-regular fa-envelope mr-2"></i>shayanalimscs@gmail.com</a>
+          <div class="mt-9 flex justify-center gap-3">
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://scholar.google.com/citations?hl=en&user=QaPiey0AAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://orcid.org/0009-0007-5335-5285" target="_blank" rel="noopener" aria-label="ORCID"><i class="fa-brands fa-orcid text-lg"></i></a>
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://www.linkedin.com/in/syedshayanalishah" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-button grid h-11 w-11 place-items-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-cyan-300/40 hover:text-white" href="https://github.com/itsCodeBakery" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800/70 py-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 text-xs text-slate-500 sm:flex-row lg:px-8">
+      <p>© <span id="year"></span> Syed Shayan Ali Shah. All rights reserved.</p>
+      <p>Designed for scholarship, collaboration, and impact.</p>
+    </div>
+  </footer>
+
+  <div id="publicationModal" class="modal-backdrop fixed inset-0 z-[90] bg-black/70 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-panel modal-scrollbar absolute right-0 top-0 h-full w-full max-w-3xl overflow-y-auto border-l border-slate-700/70 bg-[#091424] shadow-2xl">
+      <div class="sticky top-0 z-20 flex items-center justify-between border-b border-slate-800 bg-[#091424]/90 px-5 py-4 backdrop-blur-xl sm:px-8">
+        <span class="text-xs font-bold uppercase tracking-[.17em] text-slate-500">Publication detail</span>
+        <button id="modalClose" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-700 text-slate-300 hover:border-cyan-300/40 hover:text-white" aria-label="Close publication details"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modalContent" class="px-5 py-8 sm:px-8 sm:py-10"></div>
+    </div>
+  </div>
+
+  <script>
+    const SELF_NAME = 'Syed Shayan Ali Shah';
+    const publications = [
+      {
+        id: 'plantclr', type: 'journal', year: '2026', label: 'Journal article', status: 'Published', statusClass: 'status-published',
+        title: 'PlantCLR: Contrastive Self-Supervised Pretraining for Generalizable Plant Disease Detection',
+        authors: ['Syed Shayan Ali Shah','Faisal Saeed','Muhammad Umair Raza','Abdul Rehman','Muhammad Shaheryar','Il-Min Kim','Sangseok Yun','Jae-Mo Kang'],
+        venue: 'Scientific Reports · Nature Portfolio', meta: 'Volume 16 · Article 10550 · Published 31 March 2026', journal: 'Impact Factor ≈ 3.8 · Q1 Journal', role: 'First Author · research design, experimentation, analysis, and manuscript development',
+        abstract: 'PlantCLR evaluates a contrastive self-supervised pretraining and fine-tuning pipeline for plant disease classification under cross-dataset transfer. A SimCLR-style objective and ConvNeXt-Tiny encoder learn transferable representations from unlabeled images before supervised fine-tuning. Evaluation on controlled PlantVillage imagery and field-acquired Cassava data demonstrates strong generalization, while t-SNE and Grad-CAM analyses reveal improved class separation and attention to disease-relevant regions.',
+        metrics: [['99.10%','PlantVillage accuracy'],['99.04%','PlantVillage F1'],['96.83%','Cassava accuracy'],['96.70%','Cassava F1']],
+        links: [{name:'Read article',url:'https://www.nature.com/articles/s41598-026-45684-x',icon:'fa-solid fa-arrow-up-right-from-square'},{name:'Google Scholar',url:'https://scholar.google.com/citations?hl=en&user=QaPiey0AAAAJ',icon:'fa-solid fa-graduation-cap'}],
+        figures: [
+          {name:'Methodology',caption:'Two-stage contrastive pretraining and supervised fine-tuning pipeline.',src:'https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-026-45684-x/MediaObjects/41598_2026_45684_Fig1_HTML.png',href:'https://www.nature.com/articles/s41598-026-45684-x/figures/1'},
+          {name:'Dataset samples',caption:'PlantVillage controlled images and Cassava field imagery.',src:'https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-026-45684-x/MediaObjects/41598_2026_45684_Fig2_HTML.png',href:'https://www.nature.com/articles/s41598-026-45684-x/figures/2'},
+          {name:'ROC analysis',caption:'Class-level discrimination and ROC performance.',src:'https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-026-45684-x/MediaObjects/41598_2026_45684_Fig7_HTML.png',href:'https://www.nature.com/articles/s41598-026-45684-x/figures/7'}
+        ],
+        evidence: [{name:'Per-class results',url:'https://www.nature.com/articles/s41598-026-45684-x/tables/3'},{name:'Baseline comparison',url:'https://www.nature.com/articles/s41598-026-45684-x/tables/5'}]
+      },
+      {
+        id: 'xdrnet', type: 'review', year: '2026', label: 'Journal manuscript', status: 'Minor Revision', statusClass: 'status-review',
+        title: 'XDR-Net: A Hybrid Convolution Single-Layer Attention Model with Balanced Optimization for Diabetic Retinopathy Detection',
+        authors: ['Syed Shayan Ali Shah','Afsheen Khalid','Haleem Farman','Bilal Jan','Dilawar Khan','Moustafa M. Nasralla','Ahmed Sedik'],
+        venue: 'Scientific Reports · Nature Portfolio', meta: 'Manuscript under minor revision', journal: 'Journal manuscript · Explainable medical AI', role: 'First Author · model design, implementation, experiments, explainability, and writing',
+        abstract: 'XDR-Net is a hybrid deep model for multi-class diabetic retinopathy recognition from retinal fundus images. It combines convolutional feature extraction with a compact single-layer attention mechanism and balanced optimization to capture both local lesion patterns and global disease context. The evaluation emphasizes class balance, calibration, and explainability, supporting robust screening across different severity grades.',
+        metrics: [['98.54%','Accuracy'],['97.53%','Balanced accuracy'],['97.30%','Macro F1'],['97.88%','Macro AUC']],
+        links: [{name:'View repository',url:'https://github.com/itsCodeBakery/XDR-NET',icon:'fa-brands fa-github'}],
+        figures: [
+          {name:'Proposed methodology',caption:'Hybrid convolution and single-layer attention architecture.',src:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/METHODLOGY.png',href:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/METHODLOGY.png'},
+          {name:'Confusion matrix',caption:'Count and normalized confusion matrices across DR grades.',src:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/confusion_matrix_counts_vs_normalized.png',href:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/confusion_matrix_counts_vs_normalized.png'},
+          {name:'F1-score curve',caption:'Class-sensitive F1 behavior across decision thresholds.',src:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/f1_curve.png',href:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/f1_curve.png'},
+          {name:'Training loss',caption:'Optimization and convergence profile.',src:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/loss_curve.png',href:'https://raw.githubusercontent.com/itsCodeBakery/XDR-NET/main/Proposed%20Methodology/plots/loss_curve.png'}
+        ], evidence: []
+      },
+      {
+        id: 'casrnet', type: 'review', year: '2026', label: 'Conference manuscript', status: 'Under Review', statusClass: 'status-review',
+        title: 'CASR-Net: Confidence-Aware Scribble Refinement for Weakly Supervised Lung Lesion Segmentation in Chest CT',
+        authors: ['Syed Shayan Ali Shah','Ikram Ali','Muhammad Umair Raza','Rasha Alahmad','Sanjar Karshiev','Faisal Saeed'],
+        venue: 'IEEE International Conference on Bioinformatics and Biomedicine', meta: 'Submitted to IEEE BIBM 2026', journal: 'Full conference paper · Weakly supervised segmentation', role: 'First Author · led methodological design, experiments, evaluation, and manuscript preparation',
+        abstract: 'CASR-Net addresses lung lesion segmentation when only sparse scribble annotations are available. Its confidence-aware refinement strategy expands reliable foreground and background supervision while rejecting uncertain pixels, allowing the segmentation network to learn stronger lesion boundaries without requiring dense masks. The framework is evaluated on chest CT image-mask pairs under a controlled weak-supervision protocol.',
+        metrics: [['2,729','CT image-mask pairs'],['0.85','Foreground confidence'],['0.05','Background confidence'],['Sparse','Scribble supervision']],
+        links: [], figures: [], evidence: [],
+        pipeline: ['Sparse scribbles','Confidence estimation','Reliable pseudo-labels','Boundary-aware segmentation']
+      },
+      {
+        id: 'beyondlabels', type: 'conference', year: '2025', label: 'IEEE conference', status: 'Published', statusClass: 'status-conference',
+        title: 'Beyond Labels: Contrastive Representation Learning for Scalable Image-Based Plant Disease Diagnosis',
+        authors: ['Syed Shayan Ali Shah','Hafeez Anwar','Mohamed A. S. Alnuaimi','Mohamed M. A. Alshehhi','Mohamed Isa','O. J. S. A. Harthi','Farman Ullah'],
+        venue: '2025 International Congress on Smart Agriculture and Sustainable Systems', meta: 'IEEE SmartAgri & SuSY · 5–9 December 2025', journal: 'DOI: 10.1109/SmartAgriSuSY68475.2025.11466957', role: 'First Author',
+        abstract: 'This work investigates contrastive representation learning as a scalable alternative to purely supervised plant disease diagnosis. The study learns transferable image features from augmented views and evaluates their utility for disease classification, with emphasis on reducing label dependence and strengthening generalization across visual conditions.',
+        metrics: [['IEEE','Proceedings'],['2025','Publication year'],['SSL','Learning paradigm'],['7','Co-authors']],
+        links: [{name:'IEEE Xplore',url:'https://ieeexplore.ieee.org/document/11466957/',icon:'fa-solid fa-arrow-up-right-from-square'}], figures: [], evidence: [],
+        pipeline: ['Unlabeled leaf images','Contrastive views','Representation learning','Disease diagnosis']
+      },
+      {
+        id: 'patnwsn', type: 'conference', year: '2026', label: 'ACM conference', status: 'Published', statusClass: 'status-conference',
+        title: 'Secure and Privacy-Preserving Intrusion Detection in Wireless Sensor Networks via Perturbation Adversarial Training',
+        authors: ['Faisal Saeed','Dabin Park','Syed Shayan Ali Shah','Junbeom Lee','Abdul Rehman','Jae-Mo Kang','Il-Min Kim','Sangseok Yun','Sunghwan Moon'],
+        venue: 'ACM/SIGAPP Symposium on Applied Computing', meta: 'SAC 2026 · Pages 2081–2087', journal: 'DOI: 10.1145/3748522.3779960', role: 'Contributing Author',
+        abstract: 'This paper develops a privacy-aware intrusion detection framework for wireless sensor networks using perturbation adversarial training. Projected Gradient Descent generates adversarial examples during training, strengthening the detector against evasive attacks while supporting robust security decisions in constrained network environments.',
+        metrics: [['ACM SAC','Venue'],['2081–87','Proceedings pages'],['PGD','Adversarial method'],['2026','Publication year']],
+        links: [{name:'ACM Digital Library',url:'https://dl.acm.org/doi/10.1145/3748522.3779960',icon:'fa-solid fa-arrow-up-right-from-square'}], figures: [], evidence: [],
+        pipeline: ['WSN traffic','PGD perturbations','Adversarial training','Robust detection']
+      }
+    ];
+
+    const escapeHTML = (value) => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));
+    const renderAuthors = authors => authors.map(name => name === SELF_NAME ? `<strong class="author-self">${escapeHTML(name)}</strong>` : escapeHTML(name)).join(', ');
+
+    function renderPublicationCards(filter = 'all') {
+      const grid = document.getElementById('publicationGrid');
+      const visible = publications.filter(p => filter === 'all' || p.type === filter);
+      grid.innerHTML = visible.map((p, index) => `
+        <article class="pub-card glass reveal visible cursor-pointer rounded-[1.6rem] p-6 sm:p-7" role="button" tabindex="0" data-pub-id="${p.id}" aria-label="View details for ${escapeHTML(p.title)}" style="--accent:${p.type === 'journal' ? 'rgba(45,212,191,.15)' : p.type === 'review' ? 'rgba(245,158,11,.12)' : 'rgba(124,131,255,.15)'}">
+          <div class="relative flex h-full flex-col">
+            <div class="flex items-start justify-between gap-4">
+              <span class="${p.statusClass} rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[.12em]">${p.status}</span>
+              <span class="font-display text-sm font-bold text-slate-500">${p.year}</span>
+            </div>
+            <p class="mt-6 text-[11px] font-bold uppercase tracking-[.17em] text-slate-500">${p.label}</p>
+            <h3 class="mt-3 font-display text-xl font-bold leading-7 text-white sm:text-[1.35rem]">${p.title}</h3>
+            <p class="mt-4 text-xs leading-6 text-slate-400">${renderAuthors(p.authors)}</p>
+            <div class="mt-auto pt-7">
+              <div class="border-t border-slate-700/60 pt-5">
+                <p class="text-sm font-semibold text-slate-200">${p.venue}</p>
+                <div class="mt-3 flex items-center justify-between gap-4"><span class="text-[11px] text-slate-500">${p.journal}</span><span class="text-xs font-bold text-cyan-300">View study <i class="fa-solid fa-arrow-right ml-1"></i></span></div>
+              </div>
+            </div>
+          </div>
+        </article>`).join('');
+
+      grid.querySelectorAll('[data-pub-id]').forEach(card => {
+        card.addEventListener('click', () => openPublication(card.dataset.pubId));
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPublication(card.dataset.pubId); } });
+      });
+    }
+
+    function renderPipeline(items) {
+      if (!items?.length) return '';
+      return `<div class="mt-9"><h3 class="font-display text-lg font-bold text-white">Method at a glance</h3><div class="mt-4 grid gap-2 sm:grid-cols-4">${items.map((item,i)=>`<div class="relative rounded-xl border border-slate-700 bg-slate-900/65 p-3 text-center text-xs font-semibold text-slate-300"><span class="mb-2 block text-[10px] text-cyan-400">0${i+1}</span>${escapeHTML(item)}${i<items.length-1?'<i class="fa-solid fa-chevron-right absolute -right-2.5 top-1/2 z-10 hidden -translate-y-1/2 text-[9px] text-slate-500 sm:block"></i>':''}</div>`).join('')}</div></div>`;
+    }
+
+    function openPublication(id) {
+      const p = publications.find(item => item.id === id);
+      if (!p) return;
+      const links = p.links.length ? `<div class="mt-6 flex flex-wrap gap-2">${p.links.map(link=>`<a href="${link.url}" target="_blank" rel="noopener" class="rounded-full border border-cyan-300/20 bg-cyan-300/[.06] px-4 py-2 text-xs font-bold text-cyan-200 hover:border-cyan-300/45"><i class="${link.icon} mr-2"></i>${link.name}</a>`).join('')}</div>` : '';
+      const gallery = p.figures.length ? `<div class="mt-10"><div class="flex items-center justify-between"><h3 class="font-display text-lg font-bold text-white">Figure gallery</h3><span class="text-[10px] uppercase tracking-[.14em] text-slate-500">Open asset for full size</span></div><div class="mt-4 grid gap-4 ${p.figures.length > 1 ? 'sm:grid-cols-2' : ''}">${p.figures.map(fig=>`<a class="gallery-card overflow-hidden rounded-2xl border border-slate-700 bg-white" href="${fig.href}" target="_blank" rel="noopener"><div class="grid min-h-48 place-items-center overflow-hidden bg-white"><img src="${fig.src}" alt="${escapeHTML(fig.name)}" class="max-h-72 w-full object-contain" loading="lazy" onerror="this.parentElement.parentElement.classList.add('image-error')" /></div><div class="border-t border-slate-200 bg-slate-50 p-4"><p class="text-sm font-bold text-slate-900">${escapeHTML(fig.name)}</p><p class="mt-1 text-xs leading-5 text-slate-600">${escapeHTML(fig.caption)}</p></div></a>`).join('')}</div></div>` : '';
+      const evidence = p.evidence.length ? `<div class="mt-5 flex flex-wrap gap-2">${p.evidence.map(e=>`<a href="${e.url}" target="_blank" rel="noopener" class="rounded-xl border border-slate-700 bg-slate-900/55 px-4 py-3 text-xs font-semibold text-slate-300 hover:border-indigo-400/40 hover:text-white"><i class="fa-solid fa-table-list mr-2 text-indigo-300"></i>${e.name}</a>`).join('')}</div>` : '';
+      document.getElementById('modalContent').innerHTML = `
+        <span class="${p.statusClass} inline-flex rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[.12em]">${p.status}</span>
+        <p class="mt-6 text-xs font-bold uppercase tracking-[.17em] text-cyan-300">${p.label} · ${p.year}</p>
+        <h2 id="modalTitle" class="mt-3 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">${p.title}</h2>
+        <p class="mt-5 text-sm leading-7 text-slate-400">${renderAuthors(p.authors)}</p>
+        <div class="mt-6 rounded-2xl border border-slate-700/70 bg-slate-900/55 p-5"><p class="font-semibold text-white">${p.venue}</p><p class="mt-1 text-xs text-slate-400">${p.meta}</p><p class="mt-3 text-xs font-semibold text-indigo-200">${p.journal}</p></div>
+        ${links}
+        <div class="mt-10"><h3 class="font-display text-lg font-bold text-white">Abstract</h3><p class="mt-3 text-sm leading-7 text-slate-300">${p.abstract}</p></div>
+        <div class="mt-9"><h3 class="font-display text-lg font-bold text-white">Contribution</h3><p class="mt-3 rounded-xl border-l-2 border-cyan-300 bg-cyan-300/[.045] px-4 py-3 text-sm leading-6 text-slate-300">${p.role}</p></div>
+        <div class="mt-9"><h3 class="font-display text-lg font-bold text-white">Performance & evidence</h3><div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">${p.metrics.map(m=>`<div class="metric-cell rounded-xl p-4"><p class="font-display text-xl font-extrabold text-white">${m[0]}</p><p class="mt-1 text-[10px] leading-4 text-slate-400">${m[1]}</p></div>`).join('')}</div>${evidence}</div>
+        ${renderPipeline(p.pipeline)}${gallery}
+        <p class="mt-10 border-t border-slate-800 pt-5 text-[10px] leading-5 text-slate-600">Metadata and performance values are presented for academic overview. Follow the publication link for the archival version of record.</p>`;
+      const modal = document.getElementById('publicationModal');
+      modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; document.getElementById('modalClose').focus();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('publicationModal');
+      modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow='';
+    }
+
+    renderPublicationCards();
+    document.querySelectorAll('.filter-btn').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); button.classList.add('active'); renderPublicationCards(button.dataset.filter);
+    }));
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    document.getElementById('publicationModal').addEventListener('click', e => { if (e.target.id === 'publicationModal') closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => { const open = !mobileMenu.classList.toggle('hidden'); menuButton.setAttribute('aria-expanded', String(open)); menuButton.innerHTML = `<i class="fa-solid ${open ? 'fa-xmark' : 'fa-bars'}"></i>`; });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.add('hidden'); menuButton.setAttribute('aria-expanded','false'); menuButton.innerHTML='<i class="fa-solid fa-bars"></i>'; }));
+
+    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } }), { threshold: .13 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const updateScroll = () => {
+      document.getElementById('navbar').classList.toggle('scrolled', scrollY > 20);
+      const max = document.documentElement.scrollHeight - innerHeight;
+      document.getElementById('progress').style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+      let current = 'home'; sections.forEach(s => { if(scrollY >= s.offsetTop - 150) current = s.id; });
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
+    };
+    addEventListener('scroll', updateScroll, {passive:true}); updateScroll();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (() => {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const canvas = document.getElementById('particleCanvas');
+      const ctx = canvas.getContext('2d');
+      let width, height, particles = [], pointer = {x:-9999,y:-9999};
+      function resize() {
+        const dpr = Math.min(devicePixelRatio || 1, 1.75); width = canvas.clientWidth; height = canvas.clientHeight; canvas.width = width*dpr; canvas.height = height*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+        const count = Math.min(68, Math.floor(width/20));
+        particles = Array.from({length:count},()=>({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,r:Math.random()*1.4+.35}));
+      }
+      function draw() {
+        ctx.clearRect(0,0,width,height);
+        particles.forEach((p,i)=>{
+          const dx=p.x-pointer.x, dy=p.y-pointer.y, d=Math.hypot(dx,dy); if(d<130){p.x+=dx/(d||1)*.25;p.y+=dy/(d||1)*.25;}
+          p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>width)p.vx*=-1;if(p.y<0||p.y>height)p.vy*=-1;
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=i%3===0?'rgba(124,131,255,.56)':'rgba(70,217,255,.42)';ctx.fill();
+          for(let j=i+1;j<particles.length;j++){const q=particles[j],dist=Math.hypot(p.x-q.x,p.y-q.y);if(dist<95){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(91,184,231,${(1-dist/95)*.08})`;ctx.stroke();}}
+        }); requestAnimationFrame(draw);
+      }
+      canvas.parentElement.addEventListener('pointermove',e=>{pointer.x=e.clientX;pointer.y=e.clientY;},{passive:true}); canvas.parentElement.addEventListener('pointerleave',()=>pointer={x:-9999,y:-9999});
+      addEventListener('resize',resize,{passive:true}); resize(); draw();
+    })();
+  </script>
 </body>
 </html>
