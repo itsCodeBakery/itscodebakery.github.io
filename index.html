@@ -82,6 +82,13 @@
       justify-content:center;
       color:#315b7d;
       font-size:24px;
+      overflow:hidden;
+    }
+    .paper-thumb img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
     .tag {
       display:inline-block;
@@ -344,7 +351,15 @@
 
           <div id="pubList">
             <article class="paper publication-item" data-category="journal">
-              <div class="paper-thumb"><i class="fa-solid fa-seedling"></i></div>
+              <a class="paper-thumb"
+                 href="https://www.nature.com/articles/s41598-026-45684-x/figures/1"
+                 target="_blank" rel="noopener"
+                 aria-label="Open PlantCLR methodology figure">
+                <img
+                  src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-026-45684-x/MediaObjects/41598_2026_45684_Fig1_HTML.png"
+                  alt="PlantCLR methodology overview from Figure 1"
+                  loading="lazy">
+              </a>
               <div>
                 <h3 class="font-semibold leading-6 text-ink">
                   PlantCLR: Contrastive Self-Supervised Pretraining for Generalizable Plant Disease Detection
@@ -358,6 +373,7 @@
                 </p>
                 <div class="mt-2 text-[13px]">
                   [<a href="https://doi.org/10.1038/s41598-026-45684-x" target="_blank" rel="noopener" class="text-link hover:underline">paper</a>]
+                  [<a href="https://www.nature.com/articles/s41598-026-45684-x/figures/1" target="_blank" rel="noopener" class="text-link hover:underline">methodology</a>]
                   [<a href="https://doi.org/10.1038/s41598-026-45684-x" target="_blank" rel="noopener" class="text-link hover:underline">doi</a>]
                 </div>
               </div>
@@ -376,55 +392,92 @@
                 <p class="mt-1 text-[13px] text-slate-500">
                   <em>Scientific Reports</em>. Minor Revision, 2026.
                 </p>
-                <div class="mt-2 text-[13px] text-slate-500">[under review]</div>
               </div>
             </article>
 
             <article class="paper publication-item" data-category="review">
-              <div class="paper-thumb"><i class="fa-solid fa-lungs"></i></div>
+              <div class="paper-thumb"><i class="fa-solid fa-notes-medical"></i></div>
               <div>
                 <h3 class="font-semibold leading-6 text-ink">
-                  From Sparse Scribbles to Reliable Lesion Masks: Uncertainty-Guided Weak Supervision for Chest CT Segmentation
+                  XDR-Net: A Hybrid Convolutional Network with Single-Layer Attention and Balanced Optimization for Diabetic Retinopathy Detection
                 </h3>
                 <p class="mt-1 text-[13px] leading-6 text-slate-600">
-                  Jae-Mo Kang, <strong>Syed Shayan Ali Shah</strong>
+                  <strong>Syed Shayan Ali Shah</strong>, Jae-Mo Kang, Faisal Saeed, Muhammad Umair Raza,
+                  Junbeom Lee, Il-Min Kim, Sangseok Yun, Jeehyun Kim
                 </p>
                 <p class="mt-1 text-[13px] text-slate-500">
-                  Submitted to IEEE BIBM, 2026.
+                  <em>Scientific Reports</em>. Under Review, 2026.
                 </p>
-                <div class="mt-2 text-[13px] text-slate-500">[manuscript under review]</div>
+                <p class="mt-1 text-[12px] text-slate-400">
+                  Corresponding author: Jae-Mo Kang · Kyungpook National University
+                </p>
               </div>
             </article>
 
             <article class="paper publication-item" data-category="conference">
-              <div class="paper-thumb"><i class="fa-solid fa-wave-square"></i></div>
+              <div class="paper-thumb"><i class="fa-solid fa-leaf"></i></div>
+              <div>
+                <h3 class="font-semibold leading-6 text-ink">
+                  Beyond Labels: Contrastive Representation Learning for Scalable Image-Based Plant Disease Diagnosis
+                </h3>
+                <p class="mt-1 text-[13px] leading-6 text-slate-600">
+                  <strong>Syed Shayan Ali Shah</strong>, H. Anwar, M. A. S. Alnuaimi, M. M. A. Alshehhi,
+                  M. Isa, O. J. S. A. Harthi, F. Ullah
+                </p>
+                <p class="mt-1 text-[13px] text-slate-500">
+                  2025 International Congress on Smart Agriculture and Sustainable Systems (SmartAgri&amp;SuSY), 2025.
+                </p>
+                <div class="mt-2 text-[13px]">
+                  [<a href="https://ieeexplore.ieee.org/abstract/document/11466957" target="_blank" rel="noopener" class="text-link hover:underline">IEEE Xplore</a>]
+                  [<a href="https://doi.org/10.1109/SMARTAGRISUSY68475.2025.11466957" target="_blank" rel="noopener" class="text-link hover:underline">doi</a>]
+                </div>
+              </div>
+            </article>
+
+            <article class="paper publication-item" data-category="conference">
+              <div class="paper-thumb"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h3 class="font-semibold leading-6 text-ink">
+                  Secure and Privacy-Preserving Intrusion Detection in Wireless Sensor Networks via Perturbation Adversarial Training
+                </h3>
+                <p class="mt-1 text-[13px] leading-6 text-slate-600">
+                  Faisal Saeed, Dabin Park, <strong>Syed Shayan Ali Shah</strong>, Junbeom Lee, Abdul Rehman,
+                  Jae-Mo Kang, Il-Min Kim, Sangseok Yun, Sunghwan Moon
+                </p>
+                <p class="mt-1 text-[13px] text-slate-500">
+                  Proceedings of the 41st ACM/SIGAPP Symposium on Applied Computing (SAC), 2026, pp. 2081–2087.
+                </p>
+                <div class="mt-2 text-[13px]">
+                  [<a href="https://dl.acm.org/doi/abs/10.1145/3748522.3779960" target="_blank" rel="noopener" class="text-link hover:underline">ACM Digital Library</a>]
+                  [<a href="https://doi.org/10.1145/3748522.3779960" target="_blank" rel="noopener" class="text-link hover:underline">doi</a>]
+                </div>
+              </div>
+            </article>
+
+            <article class="paper publication-item" data-category="review">
+              <a class="paper-thumb"
+                 href="https://github.com/itsCodeBakery/scribble-uncertainty-lung-segmentation/blob/main/outputs/figures/results/uncertainty_guided_pseudo_label_examples.png"
+                 target="_blank" rel="noopener"
+                 aria-label="Open uncertainty-guided pseudo-label examples">
+                <img
+                  src="https://raw.githubusercontent.com/itsCodeBakery/scribble-uncertainty-lung-segmentation/main/outputs/figures/results/uncertainty_guided_pseudo_label_examples.png"
+                  alt="Uncertainty-guided pseudo-label examples for chest CT segmentation"
+                  loading="lazy">
+              </a>
               <div>
                 <h3 class="font-semibold leading-6 text-ink">
                   Confidence-Aware Scribble Refinement for Weakly Supervised Chest CT Segmentation
                 </h3>
                 <p class="mt-1 text-[13px] leading-6 text-slate-600">
-                  <strong>Syed Shayan Ali Shah</strong> et al.
+                  <strong>Syed Shayan Ali</strong>, Rasha Alahmad, Faisal Saeed
                 </p>
                 <p class="mt-1 text-[13px] text-slate-500">
-                  IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2026.
+                  Submitted to conference · Under Review, 2026.
                 </p>
-                <div class="mt-2 text-[13px] text-slate-500">[conference paper]</div>
-              </div>
-            </article>
-
-            <article class="paper publication-item" data-category="conference">
-              <div class="paper-thumb"><i class="fa-solid fa-network-wired"></i></div>
-              <div>
-                <h3 class="font-semibold leading-6 text-ink">
-                  Intelligent Intrusion Detection for Wireless Sensor Networks
-                </h3>
-                <p class="mt-1 text-[13px] leading-6 text-slate-600">
-                  Syed Shayan Ali Shah et al.
-                </p>
-                <p class="mt-1 text-[13px] text-slate-500">
-                  ACM/SIGAPP Symposium on Applied Computing (SAC), 2026.
-                </p>
-                <div class="mt-2 text-[13px] text-slate-500">[conference paper]</div>
+                <div class="mt-2 text-[13px]">
+                  [<a href="https://github.com/itsCodeBakery/scribble-uncertainty-lung-segmentation" target="_blank" rel="noopener" class="text-link hover:underline">code</a>]
+                  [<a href="https://github.com/itsCodeBakery/scribble-uncertainty-lung-segmentation/blob/main/outputs/figures/results/uncertainty_guided_pseudo_label_examples.png" target="_blank" rel="noopener" class="text-link hover:underline">results figure</a>]
+                </div>
               </div>
             </article>
           </div>
