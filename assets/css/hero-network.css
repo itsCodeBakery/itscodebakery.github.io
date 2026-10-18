@@ -1,0 +1,57 @@
+/* Decorative additions only. The accepted portrait, typography, and layout keep their original rules. */
+.intro-stage .hero-network-scene{position:absolute;inset:0;z-index:2;pointer-events:none;user-select:none}
+.hero-network-links{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:none}
+.hero-network-links path{vector-effect:non-scaling-stroke;stroke-linecap:round}
+.network-link{stroke:#a7c7ac;stroke-width:1;stroke-dasharray:3 10;opacity:.18}
+.network-packet{stroke:#d9e9c6;stroke-width:2;stroke-dasharray:3 580;opacity:.65}
+.network-link-secondary{opacity:.13}
+.network-packet-secondary{stroke-dasharray:2 340;opacity:.4}
+
+/* A small quadcopter built from elevated CSS surfaces, with four independent rotors. */
+.hero-drone{position:absolute;left:calc(24.5% - 84px);top:calc(27.2% - 78px);width:168px;height:156px;perspective:700px}
+.drone-hover,.drone-model{width:156px;height:156px;transform-style:preserve-3d}
+.drone-model{position:relative;transform:rotateX(55deg) rotateY(-9deg) rotateZ(-28deg)}
+.drone-arm{position:absolute;left:-4px;top:73px;width:164px;height:10px;border:1px solid #94ad99;border-radius:5px;background:linear-gradient(#a9bba4,#5d7765);box-shadow:0 4px 0 #324e3e;transform:translateZ(3px) rotateZ(45deg)}
+.drone-arm-b{transform:translateZ(3px) rotateZ(-45deg)}
+.drone-hull{position:absolute;left:51px;top:43px;width:54px;height:70px;border:1px solid #dbe5cc;border-radius:21px 21px 16px 16px;background:linear-gradient(115deg,#ecedd6 0%,#c3cfb5 35%,#8aab91 76%,#557761 100%);box-shadow:0 3px 0 #718b70,0 6px 0 #4c6954,0 9px 0 #2a4637,0 15px 18px #0004;transform:translateZ(13px)}
+.drone-panel{position:absolute;inset:11px 12px 21px;border:1px solid #486b5766;border-radius:10px 10px 5px 5px;background:repeating-linear-gradient(0deg,transparent 0 4px,#45654f55 4px 5px),linear-gradient(135deg,#7f9980,#b8c8a9)}
+.drone-led{position:absolute;left:23px;bottom:9px;width:6px;height:3px;border-radius:3px;background:#d9edaf;box-shadow:0 0 9px #daf4aeaa}
+.drone-camera{position:absolute;left:68px;top:110px;width:20px;height:19px;border:1px solid #8cae98;border-radius:5px;background:linear-gradient(135deg,#637d6a,#233e32);transform:translateZ(9px) rotateX(-48deg);box-shadow:0 4px 0 #162a21}
+.drone-camera::after{content:"";position:absolute;left:5px;top:4px;width:8px;height:8px;border:1px solid #9dbcb0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d8eee4,#53766d 25%,#102b27 60%)}
+.drone-motor{position:absolute;width:18px;height:18px;border:1px solid #adc3a8;border-radius:50%;background:linear-gradient(120deg,#c5d3b6,#486c55);box-shadow:0 4px 0 #294733;transform:translate(-50%,-50%) translateZ(8px)}
+.drone-motor-nw{left:20px;top:20px}.drone-motor-ne{left:136px;top:20px}.drone-motor-sw{left:20px;top:136px}.drone-motor-se{left:136px;top:136px}
+.drone-rotor{position:absolute;left:-17px;top:-17px;width:50px;height:50px;border:1px solid #c6d9b844;border-radius:50%;background:radial-gradient(circle,#d0dfbd08 35%,#c3d9ad16 65%,transparent 70%);transform:translateZ(6px)}
+.drone-rotor::before,.drone-rotor::after{content:"";position:absolute;left:3px;top:21px;width:42px;height:6px;border:1px solid #b4c8a855;border-radius:70% 20%;background:linear-gradient(90deg,#b7c8a977,#edf0d5cc,#8eac8b88)}
+.drone-rotor::after{transform:rotate(90deg)}
+
+/* A rotating wireframe network globe; every ring occupies its own 3D plane. */
+.hero-network-orb{position:absolute;left:calc(82.7% - 53px);top:calc(26.2% - 53px);width:106px;height:106px;perspective:600px}
+.network-orb-hover,.network-sphere{position:relative;width:106px;height:106px;transform-style:preserve-3d}
+.network-sphere{transform:rotateX(-18deg) rotateY(24deg) rotateZ(-12deg)}
+.network-ring{position:absolute;inset:0;border:1px solid #9abb9e80;border-radius:50%;transform-style:preserve-3d;box-shadow:0 0 10px #bcd5a506,inset 0 0 12px #bcd5a506}
+.network-ring-a{transform:rotateY(0deg)}.network-ring-b{transform:rotateY(60deg)}.network-ring-c{transform:rotateY(120deg)}.network-ring-equator{transform:rotateX(90deg);border-color:#d2dfb573}
+.network-node{position:absolute;left:49px;top:49px;width:8px;height:8px;border:1px solid #d5e4baaa;border-radius:50%;background:radial-gradient(circle at 30% 25%,#f0f1ce,#8ab091 60%,#476c53);box-shadow:0 0 11px #b6d39f55}
+.network-node-a{transform:translate3d(0,-53px,0)}.network-node-b{transform:translate3d(46px,26px,0)}.network-node-c{transform:translate3d(-46px,26px,0)}.network-node-d{transform:translate3d(0,0,53px)}.network-node-e{transform:translate3d(0,0,-53px)}.network-node-f{transform:translate3d(0,53px,0)}
+.network-core{position:absolute;left:45px;top:45px;width:16px;height:16px;border:1px solid #e1edc6aa;border-radius:50%;background:radial-gradient(circle at 30% 25%,#e6edc9,#8aac87 50%,#355d42);box-shadow:0 0 25px #b6d39f38}
+.hero-network-relay{position:absolute;left:calc(15% - 16px);top:calc(71.2% - 16px);width:32px;height:32px;transform:rotate(-24deg)}
+.hero-network-relay span{position:absolute;inset:0;border:1px solid #9bbca066;border-radius:8px;transform:rotateX(52deg) rotateZ(45deg);background:linear-gradient(135deg,#aec8a51a,#6d957311);box-shadow:0 5px 0 #203c2d}
+.hero-network-relay span:nth-child(2){translate:0 -9px}.hero-network-relay span:nth-child(3){translate:0 -18px;background:linear-gradient(135deg,#dae6bf66,#6d957333)}
+
+@media(prefers-reduced-motion:no-preference){
+  .drone-hover{animation:hero-drone-hover 7s ease-in-out infinite}
+  .drone-rotor{animation:hero-rotor-spin .24s linear infinite}
+  .drone-motor-ne .drone-rotor,.drone-motor-sw .drone-rotor{animation-direction:reverse}
+  .network-orb-hover{animation:hero-orb-hover 8s ease-in-out -2s infinite}
+  .network-sphere{animation:hero-network-turn 28s linear infinite}
+  .network-packet{animation:hero-network-transmit 9s linear infinite}
+  .network-packet-secondary{animation-duration:8s;animation-delay:-4s}
+}
+@keyframes hero-drone-hover{0%,100%{transform:translate3d(0,0,0) rotateZ(-2deg)}50%{transform:translate3d(3px,-11px,5px) rotateZ(3deg)}}
+@keyframes hero-rotor-spin{to{transform:translateZ(6px) rotateZ(360deg)}}
+@keyframes hero-orb-hover{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes hero-network-turn{from{transform:rotateX(-18deg) rotateY(24deg) rotateZ(-12deg)}to{transform:rotateX(-18deg) rotateY(384deg) rotateZ(-12deg)}}
+@keyframes hero-network-transmit{from{stroke-dashoffset:0}to{stroke-dashoffset:-583}}
+
+@media(max-width:1100px){.hero-drone{left:calc(20% - 67px);top:calc(25% - 62px);scale:.8;transform-origin:center}.hero-network-orb{left:calc(84% - 53px);top:calc(25% - 53px);scale:.85}.hero-network-links{opacity:.65}.hero-network-relay{left:12%;top:71%}}
+@media(max-width:880px){.hero-drone{left:calc(17% - 84px);top:calc(25% - 78px);scale:.65}.hero-network-orb{left:calc(86% - 53px);top:calc(25% - 53px);scale:.68}.hero-network-links,.hero-network-relay{display:none}}
+@media(max-width:600px){.hero-drone{left:calc(10% - 84px);top:calc(28% - 78px);scale:.46}.hero-network-orb{left:calc(91% - 53px);top:calc(27% - 53px);scale:.47}}
