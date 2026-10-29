@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/css/landing.css">
   <link rel="stylesheet" href="assets/css/research.css">
   <link rel="stylesheet" href="assets/css/hero-network.css">
-  <link rel="stylesheet" href="assets/css/publications.css">
+  <link rel="stylesheet" href="assets/css/publication-list.css">
   <link rel="icon" href="assets/images/portrait.png">
   <link rel="preload" as="image" href="assets/images/shayan-avatar.png">
 </head>
@@ -110,7 +110,7 @@
       <section id="education"><div class="section-kicker">03 / FOUNDATIONS</div><h2>Education</h2><div class="timeline"><article class="timeline-item"><div class="timeline-date">MS Computer Science</div><div><h3>Institute of Management Sciences, Peshawar</h3><p class="org"><span class="honor">Gold Medal · First position</span><br>1st in a cohort of 60 · CGPA 3.90/4.00</p><p>Specialization in Artificial Intelligence, with graduate research in explainable deep learning for diabetic retinopathy.</p></div></article><article class="timeline-item"><div class="timeline-date">BS Computer Science</div><div><h3>University of Peshawar</h3><p class="org"><span class="cohort-rank">Third position</span><br>3rd in a cohort of 120 · CGPA 3.60/4.00</p><p>Foundation in algorithms, databases, programming, software systems, and applied computing.</p></div></article></div></section>
       <section id="publications" aria-labelledby="publicationsTitle">
         <div class="section-kicker">04 / SELECTED WORK</div>
-        <div class="pub-collection-header"><div><h2 id="publicationsTitle">Selected Publications<span class="pub-heading-dot">.</span></h2><p class="small-note">Ideas, evidence, and the work in between.</p></div><span class="pub-collection-note">COMPUTER VISION<br>&amp; TRUSTWORTHY AI</span></div>
+        <div class="pub-collection-header"><h2 id="publicationsTitle">Selected Publications<span class="pub-heading-dot">.</span></h2><p class="small-note">Explore the research, from the published paper to the work in progress.</p></div>
         <div class="pub-filters" role="group" aria-label="Filter publications" hidden>
           <button type="button" class="pub-filter" data-publication-filter="all" aria-pressed="true" aria-controls="publicationList">All work <span>06</span></button>
           <button type="button" class="pub-filter" data-publication-filter="published" aria-pressed="false" aria-controls="publicationList">Published <span>03</span></button>
@@ -120,138 +120,79 @@
         <p class="pub-sr-only" id="publicationAnnouncement" role="status" aria-live="polite" aria-atomic="true"></p>
         <div id="publicationList" class="pub-collection">
           <div class="publication-group" data-publication-group="published" role="region" aria-labelledby="publications-published">
-            <div class="pub-group-heading"><div class="pub-group-title"><span class="pub-group-number">01</span><h3 id="publications-published">Published Research</h3><span class="pub-group-count">03</span></div><p>Peer-reviewed journal and conference papers.</p></div>
-            <div class="pub-grid">
-        <article class="publication pub-tile pub-tile-wide" data-status="published" aria-labelledby="paper-plantclr">
-          <div class="pub-tile-surface">
-            <a class="pub-art pub-art-leaf" href="projects/plantclr.html" tabindex="-1" aria-hidden="true">
-              <div class="pub-art-meta"><span>Representation learning</span><span>2026</span></div>
-              <svg class="pub-motif" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1.1" focusable="false"><path d="M70 226C48 97 128 43 230 36c15 115-37 191-160 190Z"/><path d="m59 245 146-174M97 196l-7-70m39 32 65-4m-36-35-3-43"/></svg>
-              <span class="pub-orbit"></span>
-              <span class="pub-paper-back"></span>
-              <div class="pub-paper"><span class="pub-paper-rule"><i></i><i></i><i></i></span><img src="assets/images/plantclr.png" alt="" loading="lazy" decoding="async" width="685" height="460"><span class="pub-paper-caption">PlantCLR / RESEARCH IN VIEW</span></div>
-              <span class="pub-art-caption">Journal article<span>↗</span></span>
-            </a>
-            <div class="pub-tile-body">
-              <div class="pub-card-meta"><span class="pub-status pub-status-published"><span aria-hidden="true"></span>Published</span><span class="pub-card-year">2026</span></div>
-              <h4 id="paper-plantclr"><a href="projects/plantclr.html"><span class="pub-project-name" aria-hidden="true">PlantCLR<span>↗</span></span><span class="pub-full-title">PlantCLR: Contrastive Self-Supervised Pretraining for Generalizable Plant Disease Detection</span></a></h4>
-              <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Faisal Saeed, Muhammad Umair Raza, Abdul Rehman, Muhammad Shaheryar, Il-Min Kim, Sangseok Yun, Jae-Mo Kang</p>
-              <p class="venue">Scientific Reports, 16, Article 10550</p>
-
-              <p class="pub-links"><a class="project-link" href="projects/plantclr.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://www.nature.com/articles/s41598-026-45684-x" target="_blank" rel="noopener">Article ↗</a><a href="https://github.com/itsCodeBakery/PlantPathology/tree/main" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </article>
-        <article class="publication pub-tile" data-status="published" aria-labelledby="paper-secure-wsn">
-          <div class="pub-tile-surface">
-            <a class="pub-art pub-art-network" href="projects/secure-wsn.html" tabindex="-1" aria-hidden="true">
-              <div class="pub-art-meta"><span>Trustworthy wireless networks</span><span>2026</span></div>
-              <svg class="pub-motif" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1.1" focusable="false"><path d="m61 76 86 69 92-70M147 145l-85 83m85-83 88 81M61 76l1 152m177-153-4 151M61 76l178-1M62 228l173-2"/><circle cx="61" cy="76" r="17"/><circle cx="147" cy="145" r="23"/><circle cx="239" cy="75" r="17"/><circle cx="62" cy="228" r="17"/><circle cx="235" cy="226" r="17"/></svg>
-              <span class="pub-orbit"></span>
-              <span class="pub-paper-back"></span>
-              <div class="pub-paper"><span class="pub-paper-rule"><i></i><i></i><i></i></span><img src="assets/images/projects/wsn-method.png" alt="" loading="lazy" decoding="async" width="1200" height="800"><span class="pub-paper-caption">Secure WSN / RESEARCH IN VIEW</span></div>
-              <span class="pub-art-caption">Conference paper<span>↗</span></span>
-            </a>
-            <div class="pub-tile-body">
-              <div class="pub-card-meta"><span class="pub-status pub-status-published"><span aria-hidden="true"></span>Published</span><span class="pub-card-year">2026</span></div>
-              <h4 id="paper-secure-wsn"><a href="projects/secure-wsn.html"><span class="pub-project-name" aria-hidden="true">Secure WSN<span>↗</span></span><span class="pub-full-title">Secure and Privacy-Preserving Intrusion Detection in Wireless Sensor Networks via Perturbation Adversarial Training</span></a></h4>
-              <p class="authors">Faisal Saeed, Dabin Park, <span class="me">Syed Shayan Ali Shah</span>, Junbeom Lee, Abdul Rehman, Jae-Mo Kang, Il-Min Kim, Sangseok Yun, Sunghwan Moon</p>
-              <p class="venue">ACM SAC 2026, pp. 2081–2087</p>
-
-              <p class="pub-links"><a class="project-link" href="projects/secure-wsn.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://dl.acm.org/doi/10.1145/3748522.3779960" target="_blank" rel="noopener">ACM Digital Library ↗</a></p>
-            </div>
-          </div>
-        </article>
-        <article class="publication pub-tile" data-status="published" aria-labelledby="paper-beyond-labels">
-          <div class="pub-tile-surface">
-            <a class="pub-art pub-art-leaf" href="projects/beyond-labels.html" tabindex="-1" aria-hidden="true">
-              <div class="pub-art-meta"><span>Agricultural vision</span><span>2025</span></div>
-              <svg class="pub-motif" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1.1" focusable="false"><path d="M70 226C48 97 128 43 230 36c15 115-37 191-160 190Z"/><path d="m59 245 146-174M97 196l-7-70m39 32 65-4m-36-35-3-43"/></svg>
-              <span class="pub-orbit"></span>
-              <span class="pub-paper-back"></span>
-              <div class="pub-paper"><span class="pub-paper-rule"><i></i><i></i><i></i></span><img src="assets/images/projects/beyond-method.png" alt="" loading="lazy" decoding="async" width="935" height="541"><span class="pub-paper-caption">Beyond Labels / RESEARCH IN VIEW</span></div>
-              <span class="pub-art-caption">Conference paper<span>↗</span></span>
-            </a>
-            <div class="pub-tile-body">
-              <div class="pub-card-meta"><span class="pub-status pub-status-published"><span aria-hidden="true"></span>Published</span><span class="pub-card-year">2025</span></div>
-              <h4 id="paper-beyond-labels"><a href="projects/beyond-labels.html"><span class="pub-project-name" aria-hidden="true">Beyond Labels<span>↗</span></span><span class="pub-full-title">Beyond Labels: Contrastive Representation Learning for Scalable Image-Based Plant Disease Diagnosis</span></a></h4>
-              <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Hafeez Anwar, Mansour Ali Saif Alnuaimi, Majed Mansoor Alabd Alshehhi, Mohamed Isa, Obaid Juma Selayem Al Harthi, Farman Ullah</p>
-              <p class="venue">IEEE SmartAgri &amp; SuSY</p>
-
-              <p class="pub-links"><a class="project-link" href="projects/beyond-labels.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://ieeexplore.ieee.org/document/11466957/" target="_blank" rel="noopener">IEEE Xplore ↗</a></p>
-            </div>
-          </div>
-        </article>
+            <div class="pub-group-heading"><div class="pub-group-title"><h3 id="publications-published">Published Research</h3><span class="pub-group-count">03</span></div><p>Peer-reviewed journal and conference papers.</p></div>
+            <div class="pub-list">
+              <article class="publication pub-row" data-status="published" aria-labelledby="paper-plantclr">
+                <span class="pub-row-number" aria-hidden="true">01</span>
+                <div class="pub-row-body">
+                  <p class="pub-row-meta"><span class="pub-status pub-status-published">Published</span><span>Journal article</span><time datetime="2026">2026</time></p>
+                  <h4 id="paper-plantclr"><a href="projects/plantclr.html">PlantCLR: Contrastive Self-Supervised Pretraining for Generalizable Plant Disease Detection</a></h4>
+                  <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Faisal Saeed, Muhammad Umair Raza, Abdul Rehman, Muhammad Shaheryar, Il-Min Kim, Sangseok Yun, Jae-Mo Kang</p>
+                  <p class="venue">Scientific Reports, 16, Article 10550</p>
+                  <p class="pub-links"><a class="project-link pub-explore" href="projects/plantclr.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://www.nature.com/articles/s41598-026-45684-x" target="_blank" rel="noopener">Article ↗</a><a href="https://github.com/itsCodeBakery/PlantPathology/tree/main" target="_blank" rel="noopener">Code ↗</a></p>
+                </div>
+              </article>
+              <article class="publication pub-row" data-status="published" aria-labelledby="paper-secure-wsn">
+                <span class="pub-row-number" aria-hidden="true">02</span>
+                <div class="pub-row-body">
+                  <p class="pub-row-meta"><span class="pub-status pub-status-published">Published</span><span>Conference paper</span><time datetime="2026">2026</time></p>
+                  <h4 id="paper-secure-wsn"><a href="projects/secure-wsn.html">Secure and Privacy-Preserving Intrusion Detection in Wireless Sensor Networks via Perturbation Adversarial Training</a></h4>
+                  <p class="authors">Faisal Saeed, Dabin Park, <span class="me">Syed Shayan Ali Shah</span>, Junbeom Lee, Abdul Rehman, Jae-Mo Kang, Il-Min Kim, Sangseok Yun, Sunghwan Moon</p>
+                  <p class="venue">ACM SAC 2026, pp. 2081–2087</p>
+                  <p class="pub-links"><a class="project-link pub-explore" href="projects/secure-wsn.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://dl.acm.org/doi/10.1145/3748522.3779960" target="_blank" rel="noopener">ACM Digital Library ↗</a></p>
+                </div>
+              </article>
+              <article class="publication pub-row" data-status="published" aria-labelledby="paper-beyond-labels">
+                <span class="pub-row-number" aria-hidden="true">03</span>
+                <div class="pub-row-body">
+                  <p class="pub-row-meta"><span class="pub-status pub-status-published">Published</span><span>Conference paper</span><time datetime="2025">2025</time></p>
+                  <h4 id="paper-beyond-labels"><a href="projects/beyond-labels.html">Beyond Labels: Contrastive Representation Learning for Scalable Image-Based Plant Disease Diagnosis</a></h4>
+                  <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Hafeez Anwar, Mansour Ali Saif Alnuaimi, Majed Mansoor Alabd Alshehhi, Mohamed Isa, Obaid Juma Selayem Al Harthi, Farman Ullah</p>
+                  <p class="venue">IEEE SmartAgri &amp; SuSY</p>
+                  <p class="pub-links"><a class="project-link pub-explore" href="projects/beyond-labels.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://ieeexplore.ieee.org/document/11466957/" target="_blank" rel="noopener">IEEE Xplore ↗</a></p>
+                </div>
+              </article>
             </div>
           </div>
           <div class="publication-group" data-publication-group="review" role="region" aria-labelledby="publications-review">
-            <div class="pub-group-heading"><div class="pub-group-title"><span class="pub-group-number">02</span><h3 id="publications-review">Under Review</h3><span class="pub-group-count">02</span></div><p>Manuscripts in peer review and revision.</p></div>
-            <div class="pub-grid">
-        <article class="publication pub-tile" data-status="review" aria-labelledby="paper-exvit-dr">
-          <div class="pub-tile-surface">
-            <a class="pub-art pub-art-eye" href="projects/exvit-dr.html" tabindex="-1" aria-hidden="true">
-              <div class="pub-art-meta"><span>Explainable vision</span><span>2026</span></div>
-              <svg class="pub-motif" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1.1" focusable="false"><ellipse cx="150" cy="150" rx="123" ry="79"/><circle cx="150" cy="150" r="62"/><circle cx="150" cy="150" r="32"/><path d="m150 87 18 26 33-11m10 48 35-12m-96 74-24-29-30 9M87 150l-35 16"/></svg>
-              <span class="pub-orbit"></span>
-              <span class="pub-paper-back"></span>
-              <div class="pub-paper"><span class="pub-paper-rule"><i></i><i></i><i></i></span><img src="assets/images/projects/exvit-results.png" alt="" loading="lazy" decoding="async" width="1706" height="870"><span class="pub-paper-caption">ExViT-DR / RESEARCH IN VIEW</span></div>
-              <span class="pub-art-caption">Journal manuscript<span>↗</span></span>
-            </a>
-            <div class="pub-tile-body">
-              <div class="pub-card-meta"><span class="pub-status pub-status-review"><span aria-hidden="true"></span>Minor revision</span><span class="pub-card-year">2026</span></div>
-              <h4 id="paper-exvit-dr"><a href="projects/exvit-dr.html"><span class="pub-project-name" aria-hidden="true">ExViT-DR<span>↗</span></span><span class="pub-full-title">ExViT-DR: Explainable EfficientNet–Transformer Learning for Diabetic Retinopathy Grading</span></a></h4>
-              <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Afsheen Khalid, Haleem Farman, Bilal Jan, Dilawar Khan, Moustafa M. Nasralla, Ahmed Sedik</p>
-              <p class="venue">Scientific Reports</p>
-              <p class="small-note">Accuracy 98.54% · Balanced accuracy 97.53% · Macro F1 97.30% · Macro AUC 97.88%</p>
-              <p class="pub-links"><a class="project-link" href="projects/exvit-dr.html">Explore project <span aria-hidden="true">↗</span></a></p>
-            </div>
-          </div>
-        </article>
-        <article class="publication pub-tile" data-status="review" aria-labelledby="paper-xdr-net">
-          <div class="pub-tile-surface">
-            <a class="pub-art pub-art-eye" href="projects/xdr-net.html" tabindex="-1" aria-hidden="true">
-              <div class="pub-art-meta"><span>Medical image analysis</span><span>2026</span></div>
-              <svg class="pub-motif" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1.1" focusable="false"><ellipse cx="150" cy="150" rx="123" ry="79"/><circle cx="150" cy="150" r="62"/><circle cx="150" cy="150" r="32"/><path d="m150 87 18 26 33-11m10 48 35-12m-96 74-24-29-30 9M87 150l-35 16"/></svg>
-              <span class="pub-orbit"></span>
-              <span class="pub-paper-back"></span>
-              <div class="pub-paper"><span class="pub-paper-rule"><i></i><i></i><i></i></span><img src="assets/images/xdr-net.png" alt="" loading="lazy" decoding="async" width="1200" height="739"><span class="pub-paper-caption">XDR-Net / RESEARCH IN VIEW</span></div>
-              <span class="pub-art-caption">Journal manuscript<span>↗</span></span>
-            </a>
-            <div class="pub-tile-body">
-              <div class="pub-card-meta"><span class="pub-status pub-status-review"><span aria-hidden="true"></span>Under review</span><span class="pub-card-year">2026</span></div>
-              <h4 id="paper-xdr-net"><a href="projects/xdr-net.html"><span class="pub-project-name" aria-hidden="true">XDR-Net<span>↗</span></span><span class="pub-full-title">XDR-Net: A Hybrid Convolutional Network with a Single-Block Attention Bridge and Balanced Optimization for Diabetic Retinopathy Detection</span></a></h4>
-              <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Jae-Mo Kang, Faisal Saeed, Muhammad Umair Raza, Junbeom Lee, Il-Min Kim, Sangseok Yun, Jeehyun Kim</p>
-              <p class="venue">Scientific Reports</p>
-
-              <p class="pub-links"><a class="project-link" href="projects/xdr-net.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://github.com/itsCodeBakery/XDR-NET" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </article>
+            <div class="pub-group-heading"><div class="pub-group-title"><h3 id="publications-review">Under Review</h3><span class="pub-group-count">02</span></div><p>Manuscripts in peer review and revision.</p></div>
+            <div class="pub-list">
+              <article class="publication pub-row" data-status="review" aria-labelledby="paper-exvit-dr">
+                <span class="pub-row-number" aria-hidden="true">04</span>
+                <div class="pub-row-body">
+                  <p class="pub-row-meta"><span class="pub-status pub-status-review">Minor revision</span><span>Journal manuscript</span><time datetime="2026">2026</time></p>
+                  <h4 id="paper-exvit-dr"><a href="projects/exvit-dr.html">ExViT-DR: Explainable EfficientNet–Transformer Learning for Diabetic Retinopathy Grading</a></h4>
+                  <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Afsheen Khalid, Haleem Farman, Bilal Jan, Dilawar Khan, Moustafa M. Nasralla, Ahmed Sedik</p>
+                  <p class="venue">Scientific Reports</p>
+                  <p class="small-note pub-row-results">Accuracy 98.54% · Balanced accuracy 97.53% · Macro F1 97.30% · Macro AUC 97.88%</p>
+                  <p class="pub-links"><a class="project-link pub-explore" href="projects/exvit-dr.html">Explore project <span aria-hidden="true">↗</span></a></p>
+                </div>
+              </article>
+              <article class="publication pub-row" data-status="review" aria-labelledby="paper-xdr-net">
+                <span class="pub-row-number" aria-hidden="true">05</span>
+                <div class="pub-row-body">
+                  <p class="pub-row-meta"><span class="pub-status pub-status-review">Under review</span><span>Journal manuscript</span><time datetime="2026">2026</time></p>
+                  <h4 id="paper-xdr-net"><a href="projects/xdr-net.html">XDR-Net: A Hybrid Convolutional Network with a Single-Block Attention Bridge and Balanced Optimization for Diabetic Retinopathy Detection</a></h4>
+                  <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Jae-Mo Kang, Faisal Saeed, Muhammad Umair Raza, Junbeom Lee, Il-Min Kim, Sangseok Yun, Jeehyun Kim</p>
+                  <p class="venue">Scientific Reports</p>
+                  <p class="pub-links"><a class="project-link pub-explore" href="projects/xdr-net.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://github.com/itsCodeBakery/XDR-NET" target="_blank" rel="noopener">Code ↗</a></p>
+                </div>
+              </article>
             </div>
           </div>
           <div class="publication-group" data-publication-group="preparation" role="region" aria-labelledby="publications-preparation">
-            <div class="pub-group-heading"><div class="pub-group-title"><span class="pub-group-number">03</span><h3 id="publications-preparation">In Preparation</h3><span class="pub-group-count">01</span></div><p>Research taking shape, from experiments to manuscript.</p></div>
-            <div class="pub-grid">
-        <article class="publication pub-tile pub-tile-wide" data-status="preparation" aria-labelledby="paper-casr-net">
-          <div class="pub-tile-surface">
-            <a class="pub-art pub-art-layers" href="projects/casr-net.html" tabindex="-1" aria-hidden="true">
-              <div class="pub-art-meta"><span>Weakly supervised segmentation</span><span>2026</span></div>
-              <svg class="pub-motif" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1.1" focusable="false"><path d="m150 38 109 61-109 62L41 99l109-61Zm-109 95 109 62 109-62M41 169l109 62 109-62M41 205l109 62 109-62"/><path d="m115 96 35 20 38-21m-38 21v25"/></svg>
-              <span class="pub-orbit"></span>
-              <span class="pub-paper-back"></span>
-              <div class="pub-paper"><span class="pub-paper-rule"><i></i><i></i><i></i></span><img src="assets/images/lung-research.png" alt="" loading="lazy" decoding="async" width="7170" height="1885"><span class="pub-paper-caption">CASR-Net / RESEARCH IN VIEW</span></div>
-              <span class="pub-art-caption">Research manuscript<span>↗</span></span>
-            </a>
-            <div class="pub-tile-body">
-              <div class="pub-card-meta"><span class="pub-status pub-status-preparation"><span aria-hidden="true"></span>In preparation</span><span class="pub-card-year">2026</span></div>
-              <h4 id="paper-casr-net"><a href="projects/casr-net.html"><span class="pub-project-name" aria-hidden="true">CASR-Net<span>↗</span></span><span class="pub-full-title">CASR-Net: Confidence-Aware Scribble Refinement for Weakly Supervised Lung Lesion Segmentation in Chest CT</span></a></h4>
-              <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Rasha Alahmad, Faisal Saeed</p>
-              <p class="venue">Weakly supervised medical image segmentation</p>
-
-              <p class="pub-links"><a class="project-link" href="projects/casr-net.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://github.com/itsCodeBakery/scribble-uncertainty-lung-segmentation" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </article>
+            <div class="pub-group-heading"><div class="pub-group-title"><h3 id="publications-preparation">In Preparation</h3><span class="pub-group-count">01</span></div><p>Ongoing research and manuscripts in development.</p></div>
+            <div class="pub-list">
+              <article class="publication pub-row" data-status="preparation" aria-labelledby="paper-casr-net">
+                <span class="pub-row-number" aria-hidden="true">06</span>
+                <div class="pub-row-body">
+                  <p class="pub-row-meta"><span class="pub-status pub-status-preparation">In preparation</span><span>Research manuscript</span><time datetime="2026">2026</time></p>
+                  <h4 id="paper-casr-net"><a href="projects/casr-net.html">CASR-Net: Confidence-Aware Scribble Refinement for Weakly Supervised Lung Lesion Segmentation in Chest CT</a></h4>
+                  <p class="authors"><span class="me">Syed Shayan Ali Shah</span>, Rasha Alahmad, Faisal Saeed</p>
+                  <p class="venue">Weakly supervised medical image segmentation</p>
+                  <p class="pub-links"><a class="project-link pub-explore" href="projects/casr-net.html">Explore project <span aria-hidden="true">↗</span></a><a href="https://github.com/itsCodeBakery/scribble-uncertainty-lung-segmentation" target="_blank" rel="noopener">Code ↗</a></p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -262,7 +203,7 @@
     </main>
   </div>
   <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/publications.js" defer></script>
+  <script src="assets/js/publication-list.js" defer></script>
   <script src="assets/js/avatar-renderer.js" defer></script>
   <script src="assets/js/avatar.js" defer></script>
   <script src="assets/js/landing.js" defer></script>

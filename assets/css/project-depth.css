@@ -1,0 +1,73 @@
+/* Research portfolios: dimension and motion live on the project pages. */
+.project-hero { overflow:hidden; }
+.project-hero-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:64px; align-items:center; }
+.project-hero-copy { min-width:0; padding:8px 0 15px; }
+.project-hero-grid h1 { font-size:clamp(58px,6.6vw,102px); }
+.project-hero-grid .project-deck { font-size:clamp(25px,2.6vw,35px); }
+.project-hero-grid .project-actions { gap:10px 14px; }
+.project-hero-grid .project-button { gap:20px; }
+.project-hero-grid .text-link { margin-left:0; }
+.research-depth-scene { position:relative; min-width:0; height:390px; width:100%; max-width:540px; margin:0 auto; perspective:1200px; isolation:isolate; }
+.research-depth-scene::before { content:""; position:absolute; inset:-25px -50px; z-index:-1; background:radial-gradient(ellipse,#a2be7140,transparent 65%); opacity:.6; }
+.research-depth-rig { position:absolute; inset:34px 12px 42px; transform-style:preserve-3d; transform:rotateX(var(--depth-x,4deg)) rotateY(var(--depth-y,-11deg)); transition:transform .7s var(--ease); }
+.research-depth-scene.is-interacting .research-depth-rig { transition:transform .12s ease-out; }
+.research-depth-sheet { position:absolute; inset:8px; border-radius:8px; border:1px solid #bed3ac50; background:linear-gradient(145deg,#accb9226,#b6ce9608); pointer-events:none; }
+.research-depth-sheet.sheet-back { transform:translate3d(-12px,11px,-55px) rotateZ(-10deg); }
+.research-depth-sheet.sheet-middle { transform:translate3d(3px,4px,-22px) rotateZ(-5deg); background:#bdd2a51a; }
+.research-depth-panel.figure-open { position:absolute; inset:18px 7px; display:flex; flex-direction:column; justify-content:initial; gap:15px; padding:18px; min-height:0; border-radius:7px; border-color:#eef5e0b3; background:#f8faf0; box-shadow:0 22px 60px #020d0a55; transform:translateZ(28px) rotateZ(-1deg); overflow:hidden; }
+.research-depth-panel-head, .research-depth-panel-foot { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; flex:none; color:#5b7350; font-size:8px; letter-spacing:.06em; }
+.research-depth-panel-head>span:first-child { font:400 16px/1.2 Georgia,serif; color:#2c4c30; letter-spacing:-.02em; }
+.research-depth-panel-head>span:last-child { font-size:7px; }
+.research-depth-panel.figure-open img { flex:1; height:0; min-height:0; width:100%; max-height:none; object-fit:contain; background:#fff; }
+.research-depth-panel-foot { font-size:9px; letter-spacing:0; }
+.research-depth-panel-foot>span { font-size:18px; }
+.research-depth-chip { position:absolute; z-index:2; padding:10px 13px; max-width:180px; border:1px solid #abc59566; border-radius:4px; background:#263e2df5; box-shadow:0 12px 25px #020d0a2b; color:#d5e7c6; font-size:9px; line-height:1.4; letter-spacing:.02em; pointer-events:none; }
+.research-depth-chip::before { content:""; display:inline-block; width:4px; height:4px; border-radius:50%; background:#b6d68c; margin-right:7px; vertical-align:middle; box-shadow:0 0 10px #bed99e66; }
+.research-depth-chip.chip-0 { top:-6px; right:15px; transform:translateZ(70px); }
+.research-depth-chip.chip-1 { bottom:7px; left:-12px; transform:translateZ(85px); }
+.research-depth-chip.chip-2 { bottom:-20px; right:5px; transform:translateZ(55px); }
+.research-depth-orbit { position:absolute; inset:14px -10px 20px; border:1px solid #c4d8b51f; border-radius:50%; transform:rotateX(60deg) rotateZ(-18deg); transition:transform 1.4s var(--ease); pointer-events:none; }
+.research-depth-orbit::before { content:""; position:absolute; left:15%; top:13%; width:8px; height:8px; border-radius:50%; background:#c8dfa5; box-shadow:0 0 20px #c8dfa577; }
+.research-depth-caption { position:absolute; bottom:0; left:24px; right:15px; display:flex; justify-content:space-between; gap:20px; font-size:9px; color:#a8be9b; letter-spacing:.02em; }
+.research-depth-caption>span { color:#c1d4b0; font-size:16px; }
+.research-depth-panel:focus-visible { outline-offset:6px; }
+.project-hero-grid + .metrics { margin-top:42px; }
+@media(prefers-reduced-motion:no-preference) {
+  .research-depth-rig { animation:research-depth-arrive 1.3s .08s var(--ease) both; }
+  .portfolio-motion .portfolio-reveal { transition:opacity .75s var(--ease),transform .85s var(--ease); }
+  .portfolio-motion .portfolio-reveal:not(.is-revealed) { opacity:0; transform:perspective(1400px) translateY(22px) rotateX(3deg); }
+  @keyframes research-depth-arrive { from { opacity:0; transform:translate3d(35px,24px,-80px) rotateX(16deg) rotateY(-30deg); } to { opacity:1; transform:rotateX(var(--depth-x,4deg)) rotateY(var(--depth-y,-11deg)); } }
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  .research-depth-scene:hover .research-depth-orbit, .research-depth-scene:focus-within .research-depth-orbit { transform:rotateX(60deg) rotateZ(28deg); }
+}
+@media(max-width:1050px) {
+  .project-hero-grid { gap:32px; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); }
+  .research-depth-scene { height:350px; }
+  .research-depth-chip { max-width:155px; font-size:8px; padding:9px 11px; }
+  .research-depth-chip.chip-0 { right:0; }
+  .research-depth-chip.chip-2 { right:-5px; }
+}
+@media(max-width:760px) {
+  .project-hero-grid { grid-template-columns:minmax(0,1fr); gap:10px; }
+  .project-hero-grid h1 { font-size:clamp(56px,12vw,90px); }
+  .project-hero-grid .project-deck { font-size:29px; max-width:600px; }
+  .research-depth-scene { width:min(100%,500px); height:350px; margin-top:14px; }
+  .project-hero-grid + .metrics { margin-top:30px; }
+}
+@media(max-width:400px) {
+  .research-depth-scene { height:315px; }
+  .research-depth-rig { inset:30px 9px 42px; }
+  .research-depth-panel.figure-open { gap:11px; padding:13px; }
+  .research-depth-panel-head>span:last-child { font-size:6px; }
+  .research-depth-chip { max-width:135px; font-size:7px; }
+  .research-depth-chip.chip-1 { left:0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .research-depth-rig, .research-depth-sheet, .research-depth-panel.figure-open, .research-depth-chip, .research-depth-orbit { transform:none !important; }
+  .research-depth-sheet { opacity:.35; }
+  .research-depth-chip.chip-0 { top:-8px; }
+  .research-depth-chip.chip-1 { bottom:-5px; }
+  .research-depth-chip.chip-2 { bottom:-25px; }
+  .portfolio-motion .portfolio-reveal { opacity:1; transform:none; }
+}
