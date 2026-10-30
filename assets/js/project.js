@@ -22,7 +22,7 @@
  document.querySelectorAll('.figure-open').forEach(a=>a.addEventListener('click',e=>{
   if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;
   e.preventDefault();trigger=a;
-  image.src=a.href;image.alt=a.querySelector('img').alt;caption.textContent=a.dataset.caption||'';original.href=a.href;
+  image.src=a.href;image.alt=a.querySelector('img').alt;caption.textContent=a.dataset.caption||'';original.href=a.dataset.source||a.href;
   overflow=document.body.style.overflow;document.body.style.overflow='hidden';
   dialog.showModal();dialog.scrollTop=0;
  }));

@@ -1,10 +1,10 @@
 # Content sources and interpretation
 
-Updated 28 September 2026. This file is for maintenance; it does not load external content into the website.
+Updated 30 October 2026. This file is for maintenance; it does not load external content into the website.
 
 ## Profile
 
-The user explicitly supplied the MS gold medal / first of 60, BS third of 120, and personal interests. Other education details and professional experience were retained from the existing portfolio. Counts are scoped to the projects actually featured here: six research projects, three published works, and three linked public code repositories.
+The user explicitly supplied the MS gold medal / first of 60, BS third of 120, and personal interests. Other education details and professional experience were retained from the existing portfolio. Counts are scoped to the projects actually featured here: seven research projects, three published works, and four linked public code repositories.
 
 ## Publication dates
 
@@ -70,3 +70,11 @@ EViCT's display heading describes the repository project. Its portfolio summariz
 - research/report_generation_evidence_grounded/verified_runs/verified_reporting_20261015_215353/REPORTING_SUMMARY.md
 
 The reporting table contains 900 records for each pathway; strict-ID and controlled free-text each directly validate 896 records and require four fallbacks. Final report validity is 900/900 for every pathway. These are reporting-rule validation results, not clinical diagnostic-accuracy estimates. The separate EViCT-Dx extension is not pooled into these results.
+
+## Expanded visual evidence and scholarly profile — 30 October 2026
+
+The About section now states the research direction through concrete problems and methods: visual representation learning, limited annotations, teacher–student segmentation, interpretable predictions, and evidence-grounded reporting. Network intrusion detection remains a related application. The invitation to contact the researcher is directed to faculty and research groups without claiming unverified achievements or clinical impact.
+
+The CASR-Net gallery contains nine figures, including six newly added figures from commit fd2a19620fc7a670d149366b12bf11c43d0cadfd. Its README distinguishes historical visual examples from a reproducible matched comparison. No pilot checkpoint is portrayed as the source of aggregate scores.
+
+The EViCT gallery contains six qualitative segmentation atlases and the two existing reporting charts. The atlases follow figures/notebook09_corrected/publicationFigures/ at commit 0a9de6e62597a36c7d36bfba0e0dcc6237f7776a. Context follows reproducibility/notebook09_qualitative_bundle/README.md: corrected CT clipping [-1250, 250], unchanged models and thresholds, and explicit separation of post-evaluation descriptive selections from predeclared qualitative selection. Gallery captions and context keep segmentation and reporting experiments distinct. ASSET_CREDITS.md records immutable paths and original Git blob hashes.
