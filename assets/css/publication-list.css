@@ -29,7 +29,7 @@
 #publications .pub-status { display:inline-flex; align-items:center; gap:6px; color:#3f6044; font-size:10px; font-weight:700; }
 #publications .pub-status::before { content:""; width:5px; height:5px; border-radius:50%; background:currentColor; }
 #publications .pub-status-review { color:#88642f; }
-#publications .pub-status-preparation { color:#637280; }
+#publications .pub-status-submitted { color:#637280; }
 #publications h4 { margin:0 0 9px; color:#263e2e; font:400 20px/1.45 Georgia,'Times New Roman',serif; letter-spacing:-.015em; }
 #publications h4 a { color:inherit; text-decoration:none; }
 #publications h4 a:hover { color:#467859; text-decoration:underline; text-underline-offset:3px; }
@@ -53,3 +53,6 @@
   #publications .pub-links a { min-height:44px; }
   #publications .publication-group + .publication-group { margin-top:38px; }
 }
+
+#publications .pub-submission { margin:7px 0 0; color:#4d6947; font-size:12px; line-height:1.7; }
+#publications .pub-submission strong { font-size:11px; font-weight:600; }

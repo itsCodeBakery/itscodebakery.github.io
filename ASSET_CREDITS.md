@@ -32,3 +32,12 @@ Social/profile icons are retained from the original site's inline SVG markup. Th
 
 The private source presentation files and conference-administration screenshots are not included in this website package. The public pages contain only relevant research figures and summaries.
 - `casr-method.png`: compact teacher-assisted supervision example extracted without alteration from the author’s research presentation. The oversized repository methodology bitmap was replaced with this existing figure to reduce decoding memory.
+
+
+## EViCT research figures — 30 October 2026
+
+Both images are copied without alteration from the public EViCT repository at commit 0a9de6e62597a36c7d36bfba0e0dcc6237f7776a, under research/report_generation_evidence_grounded/verified_runs/verified_reporting_20261015_215353/figures/:
+- assets/images/projects/evict-report-validation.png: report_validation.png, original Git blob 876f75771b2d295ddb1fd9543c6114a73670c696.
+- assets/images/projects/evict-report-fallbacks.png: report_fallbacks.png, original Git blob 723887e602e87b5065526a6571dc54bfed9b76fd.
+
+The figures describe reporting acceptance, final validation, and fallback counts in the EViCT core experiment.

@@ -55,3 +55,18 @@ Method and qualitative result follow the author's supplied research presentation
 ## Status and scope
 
 Project abstracts are short research summaries based on the sources above, not verbatim transcriptions. Publication status is distinct from manuscript status. Project figures are illustrations or results with captions identifying their source and purpose. The site's bundled content is a dated snapshot, not a live bibliometric feed.
+
+
+## Research content update — 30 October 2026
+
+The researcher supplied the broader About focus, the three-author line for CASR-Net and EViCT, and the status Submitted with the journals IEEE Transactions on Medical Imaging and IEEE Transactions on Biomedical Engineering. These update the earlier preparation status.
+
+CASR-Net's updated title follows the research repository README, retrieved 30 October 2026 (blob b14db0f2ddaabfc7d70e9d02a75a2773bc20ee85):
+https://github.com/itsCodeBakery/scribble-uncertainty-lung-segmentation/blob/main/README.md
+
+EViCT's display heading describes the repository project. Its portfolio summarizes the completed core evidence-grounded reporting study, using commit 0a9de6e62597a36c7d36bfba0e0dcc6237f7776a:
+- FINAL_STATE.md
+- tables/notebook11_reporting_arm_summary.csv
+- research/report_generation_evidence_grounded/verified_runs/verified_reporting_20261015_215353/REPORTING_SUMMARY.md
+
+The reporting table contains 900 records for each pathway; strict-ID and controlled free-text each directly validate 896 records and require four fallbacks. Final report validity is 900/900 for every pathway. These are reporting-rule validation results, not clinical diagnostic-accuracy estimates. The separate EViCT-Dx extension is not pooled into these results.
