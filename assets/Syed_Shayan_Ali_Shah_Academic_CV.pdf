@@ -1,0 +1,114 @@
+%PDF-1.4
+%ASCII
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R /F3 7 0 R >> >> /Contents 8 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R /F3 7 0 R >> >> /Contents 9 0 R >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman >>
+endobj
+8 0 obj
+<< /Length 5934 >>
+stream
+0.140 0.340 0.240 rg 0 808 595 34 re f
+BT /F2 10.5 Tf 1.000 1.000 1.000 rg 1 0 0 1 51.0 817.0 Tm (SYED SHAYAN ALI SHAH) Tj ET
+BT /F3 23 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 782.0 Tm (Academic Curriculum Vitae) Tj ET
+BT /F1 10.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 753.0 Tm (Lecturer in Computer Science | AI Researcher | Exploring PhD opportunities for 2027) Tj ET
+BT /F1 9 Tf 0.360 0.430 0.390 rg 1 0 0 1 51.0 734.0 Tm (Email: shayanalimscs@gmail.com | Peshawar, Pakistan | itscodebakery.github.io) Tj ET
+BT /F1 8.6 Tf 0.360 0.430 0.390 rg 1 0 0 1 51.0 721.0 Tm (Google Scholar: scholar.google.com/citations?user=QaPiey0AAAAJ | github.com/itsCodeBakery) Tj ET
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 697.0 Tm (RESEARCH PROFILE) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 685 m 544 685 l S
+BT /F1 9.5 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 672.0 Tm (Research in data-efficient and trustworthy deep learning, spanning self-supervised representation learning, weakly) Tj ET
+BT /F1 9.5 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 657.6 Tm (supervised medical image analysis, vision-based agriculture and reliable intelligent networked systems. My doctoral) Tj ET
+BT /F1 9.5 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 643.2 Tm (interests include label efficiency, uncertainty, interpretable prediction, and robust generalization.) Tj ET
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 616.8 Tm (EDUCATION) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 604.8000000000001 m 544 604.8000000000001 l S
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 591.8 Tm (MS Computer Science  |  Institute of Management Sciences, Peshawar) Tj ET
+BT /F1 8.2 Tf 0.360 0.430 0.390 rg 1 0 0 1 51.0 578.8 Tm (2018-2020) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 566.8 Tm (CGPA 3.90/4.00; Gold Medal and first position \(cohort of 60\). Research project on explainable deep learning for diabetic) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 554.0 Tm (retinopathy detection using fundus images.) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 536.2 Tm (BS Computer Science  |  University of Peshawar) Tj ET
+BT /F1 8.2 Tf 0.360 0.430 0.390 rg 1 0 0 1 51.0 523.2 Tm (2011-2016) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 511.2 Tm (CGPA 3.60/4.00; third position \(cohort of 120\). Final-year project on a database-driven parent communication system.) Tj ET
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 486.4 Tm (PUBLISHED AND ACCEPTED RESEARCH) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 474.40000000000015 m 544 474.40000000000015 l S
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 461.4 Tm (PlantCLR: Contrastive Self-Supervised Pretraining for Generalizable Plant Disease Detection) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 448.4 Tm (Scientific Reports, Volume 16, Article 10550 \(2026\). First author. DOI: 10.1038/s41598-026-45684-x) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 430.6 Tm (PPTM-IoV: A Privacy-Preserving Trust Management Framework for the Internet of Vehicles) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 417.6 Tm (Scientific Reports \(2026\). Accepted for publication; online publication details pending.) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 399.8 Tm (Secure and Privacy-Preserving Intrusion Detection in Wireless Sensor Networks) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 386.8 Tm (ACM Symposium on Applied Computing, 2026, pages 2081-2087. DOI: 10.1145/3748522.3779960) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 369.0 Tm (Beyond Labels: Contrastive Representation Learning for Scalable Plant Disease Diagnosis) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 356.0 Tm (IEEE SmartAgri & SuSY \(2025\). First author. DOI: 10.1109/SmartAgriSuSY68475.2025.11466957) Tj ET
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 331.2 Tm (RESEARCH MANUSCRIPTS) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 319.2000000000001 m 544 319.2000000000001 l S
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 306.2 Tm (Work under review / revision or submitted includes XDR-Net \(diabetic retinopathy\), a convolutional-transformer framework for) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 292.8 Tm (retinal screening, and CASR-Net \(confidence-aware weakly supervised chest CT lesion segmentation\). Current status is) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 279.4 Tm (detailed on the research portfolio.) Tj ET
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 254.0 Tm (SELECTED PROJECTS AND METHODS) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 242.00000000000017 m 544 242.00000000000017 l S
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 229.0 Tm (PlantCLR | Self-supervised representation learning) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 216.0 Tm (Contrastive pretraining and cross-dataset evaluation for generalizable plant disease classification.) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 198.2 Tm (CASR-Net | Weakly supervised segmentation) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 185.2 Tm (Teacher-student learning, confident pseudo-label refinement, sparse scribbles and medical CT lesion evaluation.) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 167.4 Tm (EviCT | Evidence-grounded medical imaging research) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 154.4 Tm (Ongoing study of uncertainty-aware segmentation and image-grounded reasoning for interactive CT analysis.) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 136.6 Tm (AI for Network Security | Trustworthy connected systems) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 123.6 Tm (Experimental contributions to privacy-aware intrusion detection; research interests extend to robustness and reliability of) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 110.8 Tm (AI-enabled networks.) Tj ET
+BT /F1 8 Tf 0.360 0.430 0.390 rg 1 0 0 1 51 29 Tm (Syed Shayan Ali Shah  |  Academic CV  |  Page 1 of 2) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Length 1975 >>
+stream
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 780.0 Tm (ACADEMIC AND PROFESSIONAL EXPERIENCE) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 768 m 544 768 l S
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 755.0 Tm (Lecturer in Computer Science | Government College of Management Sciences, Peshawar) Tj ET
+BT /F1 8.2 Tf 0.360 0.430 0.390 rg 1 0 0 1 51.0 742.0 Tm (November 2018 - Present) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 730.0 Tm (Undergraduate teaching, research project guidance, curriculum design, staff training and institutional digital systems.) Tj ET
+BT /F2 9.8 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 712.2 Tm (Curriculum Developer and Master Trainer) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 699.2 Tm (Programming and database curricula, faculty development, and online educational information-system deployment.) Tj ET
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 674.4 Tm (TECHNICAL STRENGTHS) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 662.4000000000001 m 544 662.4000000000001 l S
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 649.4 Tm (Deep learning; computer vision; PyTorch; Python; CNNs; vision transformers; self-supervised and contrastive learning;) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 635.8 Tm (weakly supervised learning; explainable AI; CT and fundus imaging; model evaluation and ablation studies; C++; C#;) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 622.2 Tm (PostgreSQL.) Tj ET
+BT /F2 10.4 Tf 0.140 0.340 0.240 rg 1 0 0 1 51.0 596.6 Tm (HONORS AND LANGUAGE) Tj ET
+0.800 0.860 0.820 RG 0.7 w 51 584.6 m 544 584.6 l S
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 571.6 Tm (MS Gold Medal and first position \(2020\); third position in BS Computer Science \(2016\). IELTS Academic overall band score:) Tj ET
+BT /F1 9.1 Tf 0.120 0.210 0.160 rg 1 0 0 1 51.0 558.2 Tm (7.0 \(2025\).) Tj ET
+BT /F1 8 Tf 0.360 0.430 0.390 rg 1 0 0 1 51 29 Tm (Syed Shayan Ali Shah  |  Academic CV  |  Page 2 of 2) Tj ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000016 00000 n 
+0000000065 00000 n 
+0000000128 00000 n 
+0000000274 00000 n 
+0000000420 00000 n 
+0000000490 00000 n 
+0000000565 00000 n 
+0000000637 00000 n 
+0000006622 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+8648
+%%EOF
