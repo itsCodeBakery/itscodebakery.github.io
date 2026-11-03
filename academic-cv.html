@@ -11,7 +11,7 @@
 html{scroll-behavior:smooth}body{margin:0;background:#e9eeea;color:var(--ink);font:15px/1.6 Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible{outline:3px solid #8bbbac;outline-offset:2px}
 .utility{max-width:1020px;margin:0 auto;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.utility>a{color:#264634;font-weight:700}.utility button{background:#234b37;border:0;border-radius:4px;color:#fff;padding:10px 17px;font-weight:700;cursor:pointer}.utility button:hover{background:#336649}
+.utility>a{color:#264634;font-weight:700}.utility-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.utility-actions a{border:1px solid #b5d0bd;padding:9px 13px;border-radius:4px;font-weight:700;background:#f5faf6}.utility button{background:#234b37;border:0;border-radius:4px;color:#fff;padding:10px 17px;font-weight:700;cursor:pointer}.utility button:hover{background:#336649}
 .sheet{max-width:1020px;margin:0 auto 40px;padding:60px 66px 70px;background:#fff;box-shadow:0 16px 50px #13291a13}
 .top{display:flex;align-items:start;justify-content:space-between;gap:25px;border-bottom:2px solid #274e38;padding-bottom:24px}
 .eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#4f7d5c;margin:0 0 9px}
@@ -42,7 +42,7 @@ ul{padding-left:19px;margin:7px 0}li{margin:5px 0}
 </style>
 </head>
 <body>
-<div class="utility"><a href="index.html">← Back to research portfolio</a><button type="button" onclick="window.print()" aria-label="Print or save academic CV as PDF">Print / Save as PDF</button></div>
+<div class="utility"><a href="index.html">← Back to research portfolio</a><div class="utility-actions"><a href="assets/Syed_Shayan_Ali_Shah_Academic_CV.pdf" download>Download CV (PDF)</a><button type="button" onclick="window.print()" aria-label="Print or save academic CV as PDF">Print / Save as PDF</button></div></div>
 <main class="sheet">
   <header class="top">
     <div><p class="eyebrow">Academic curriculum vitae</p><h1>Syed Shayan Ali Shah</h1><p class="subtitle">Computer Science Lecturer · AI Researcher · Prospective PhD Researcher (2027)</p></div>
