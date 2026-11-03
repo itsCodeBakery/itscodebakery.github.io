@@ -1,0 +1,38 @@
+/* PhD research positioning. Scoped to editorial content: hero avatar and its motion remain untouched. */
+.academic-actionbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0 28px}
+.academic-actionbar a,.phd-actions a,.connect-actions a{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 17px;border:1px solid #ccd8cf;border-radius:5px;font-size:13px;font-weight:700;line-height:1.4;color:#244b3d;text-decoration:none;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.academic-actionbar a:first-child,.phd-actions a:first-child,.connect-actions a:first-child{background:#214635;border-color:#214635;color:#fff}
+.academic-actionbar a:hover,.phd-actions a:hover,.connect-actions a:hover{background:#eaf2eb;border-color:#a7bcb0;transform:translateY(-2px)}
+.academic-actionbar a:first-child:hover,.phd-actions a:first-child:hover,.connect-actions a:first-child:hover{background:#315b45;color:#fff}
+.phd-note{border-left:3px solid #82a18d;padding:10px 0 10px 17px;color:#3c5246;background:linear-gradient(90deg,#f1f7f2,transparent);font-size:14px}
+.sidebar-cv{display:inline-flex;justify-content:flex-end;color:#cbdccf;font-size:12px;letter-spacing:.04em;font-weight:700;padding:8px 0;margin-top:5px}
+.sidebar-cv:hover{color:#fff}
+.phd-section .section-kicker,.contact-section .section-kicker{margin-bottom:15px}
+.phd-kicker{display:inline-block;background:#e7f2e9;border:1px solid #c8dccd;color:#315f46;padding:6px 11px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin:0 0 15px}
+.phd-section h2{max-width:760px}
+.phd-intro{max-width:810px;font:400 clamp(18px,2vw,23px)/1.55 Georgia,serif;color:#304d3b;margin:0 0 22px}
+.phd-focus-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:25px 0}
+.phd-focus-card{border:1px solid #d9e4dd;background:#fafcfa;padding:25px 26px;min-width:0}
+.phd-focus-card:nth-child(2){background:#f4f8f6}
+.phd-focus-card .phd-track{display:block;color:#577463;font-size:10px;letter-spacing:.13em;font-weight:700;margin-bottom:15px}
+.phd-focus-card h3{font:400 clamp(21px,2.2vw,27px)/1.25 Georgia,serif;color:#203c2c;margin-bottom:13px}
+.phd-focus-card p{font-size:14px;line-height:1.7;color:#4b6054}
+.phd-focus-card .phd-evidence{padding-top:12px;border-top:1px solid #dfe8e2;margin:17px 0 0;font-size:12px}
+.phd-focus-card .phd-evidence strong{color:#284a36}
+.phd-next{display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,.66fr);gap:30px;align-items:start;padding:27px 29px;background:#18352a;color:#f0f5ed;margin:25px 0 0}
+.phd-next h3{font:400 23px/1.3 Georgia,serif;margin:0 0 10px}
+.phd-next p{font-size:14px;line-height:1.7;margin:0;color:#d2e0d3}
+.phd-next .phd-actions{display:flex;flex-direction:column;gap:9px}
+.phd-next .phd-actions a{border-color:#799a80;color:#eff7f1;background:transparent}
+.phd-next .phd-actions a:first-child{background:#d6e6d0;color:#183528;border-color:#d6e6d0}
+.phd-next .phd-actions a:hover{color:#183528;background:#e7f2e5}
+.phd-next .phd-actions a:first-child:hover{color:#183528}
+.connect-panel{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(215px,.8fr);gap:34px;align-items:center;background:#f1f6f2;border:1px solid #dbe7de;padding:35px 37px}
+.connect-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;color:#4a7559;margin-bottom:12px}
+.connect-panel h2{font-size:clamp(25px,3vw,35px);color:#234333;margin:0 0 14px}
+.connect-panel p{max-width:590px;font-size:14px;color:#4b6054;line-height:1.75}
+.connect-actions{display:flex;flex-direction:column;gap:10px}
+.connect-actions a{width:100%}
+@media(max-width:780px){.phd-focus-grid,.phd-next,.connect-panel{grid-template-columns:1fr}.phd-next{gap:20px}.phd-next .phd-actions{flex-direction:row;flex-wrap:wrap}.connect-actions{align-items:stretch}}
+@media(max-width:520px){.phd-focus-card{padding:21px 20px}.phd-next{padding:24px 21px}.connect-panel{padding:26px 21px}.academic-actionbar a{width:100%}.phd-next .phd-actions a{width:100%}}
+@media(prefers-reduced-motion:reduce){.academic-actionbar a,.phd-actions a,.connect-actions a{transition:none}.academic-actionbar a:hover,.phd-actions a:hover,.connect-actions a:hover{transform:none}}
